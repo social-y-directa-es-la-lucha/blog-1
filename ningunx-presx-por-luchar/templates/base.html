@@ -40,20 +40,43 @@
             <div class="navbar-menu" id="navMenu">
                 <div class="navbar-end has-text-centered">
                     {% for item in config.extra.navbar_items %}
-                    {% if lang == item.code %}
                     {% for nav in item.nav_items %}
                     <a class="navbar-item has-text-weight-semibold"
                         href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
                         {{ nav.name }}
                     </a>
                     {% endfor %}
-                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
     </nav>
-
+    {% block index %}
+    {% endblock %}
+    <footer class="footer">
+        <div class="content has-text-right">
+            <span class="icon-text">
+                <span>
+                    <strong>La lucha es en la calle</strong>
+                    <span class="icon">
+                        <i class="fas fa-bomb fa-2x"></i>
+                    </span>
+                </span>
+            </span>
+            <p>
+            </p>
+            <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-code"></i>
+                </span>
+                <span>
+                    <a href="https://github.com/social-y-directa-es-la-lucha/blog-1.git">
+                        Repositorio de código</span></a>
+                <span class="icon">
+                    <i class="fas fa-code"></i>
+                </span>
+            </span>
+        </div>
+    </footer>
 </body>
-
 </html>
