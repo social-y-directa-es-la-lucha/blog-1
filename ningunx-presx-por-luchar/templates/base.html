@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>
         {% block title %}
         {{ config.title }}
         {% endblock title %}
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet" />
+    <link href="{{ get_url(path='style.css') }}" rel="stylesheet" />
 </head>
 
 <body>
@@ -52,7 +53,6 @@
                         {% endfor %}
                     </div>
                 </div>
-            </div>
         </nav>
     </div>
     {% block content %}
@@ -85,8 +85,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
-    <script src="{{ get_url(path='elasticlunr.min.js') }}"></script>
-    <script src="{{ get_url(path='search_index.' ~ lang ~ '.js') }}"></script>
     <script src="{{ get_url(path='js/site.js') }}"></script>
     {% block custom_js %}
     {% endblock %}

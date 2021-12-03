@@ -3,6 +3,10 @@ compile_sass = true
 build_search_index = false
 title="Blog"
 
+taxonomies = [
+    { name = "tags", fees = false, paginate_by = 10 },
+]
+
 [markdown]
 highlight_code = true
 [extra]
@@ -13,6 +17,7 @@ navbar_items = [
         { url = "$BASE_URL/tags", name = "Etiquetas" },
     ] },
 ]
+
 
 [extra.favicon]
 favicon_16x16 = "icons/favicon-16x16.png"

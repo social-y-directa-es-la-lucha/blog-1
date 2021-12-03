@@ -1,9 +1,12 @@
 +++
-title="Radio alternativa #1"
+title="Qué pasó con Radio Alternativa? #Volante"
 date=2021-11-28
+
+[taxonomies]
+tags = ["Radio Alternativa", "Censura", "Violencia Institucional"]
 +++
 
-Volante 
+Extraído del volante que se difundió apenas 
 
 <!-- more -->
 
