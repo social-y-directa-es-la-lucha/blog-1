@@ -2,26 +2,29 @@
 
 {% block content %}
 <div class="columns">
-    <div class="column is-two-thirds">
+    <div class="column is-two-thirds animate__animated animate__slideInUp">
         <section class="section">
             <div class="box">
                 <div id="main_title" class="content">
                     <p class="title is-1">{{
                         section.title }}</p>
-                    <p class="subtitle is-3">{{
-                        section.description }}</p>
+                    <div class="block">
+                        <h3 class="subtitle is-4">{{
+                            section.content | safe }}</h3>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="columns">
                     <div class="column">
-                        <div class="box has-background-danger">
+                        <div
+                            class="box has-background-danger animate__animated animate__pulse animate__infinite animate__slow">
                             <figure class="image">
                                 <img src="images/marcha.jfif">
                             </figure>
                         </div>
                     </div>
-                    <div class="column mgt-large">
+                    <div class="column mgt-large ">
                         <div class="box">
                             <figure class="image">
                                 <img src="images/Cem_murosdelpueblo_210830_448g.JPG">
@@ -37,7 +40,7 @@
             </div>
         </section>
     </div>
-    <div class="column">
+    <div class="column animate__animated animate__slideInRight">
         <div class="section">
             <figure class="image is-flex is-justify-content-center">
                 <img class="is-rounded" src="images/main.jpg" style="max-width: 192px" />

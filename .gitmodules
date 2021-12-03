@@ -1,3 +1,6 @@
 [submodule "DeepThought"]
 	path = DeepThought
 	url = https://github.com/RatanShreshtha/DeepThought
+[submodule "ningunx-presx-por-luchar/themes/DeepThought"]
+	path = ningunx-presx-por-luchar/themes/DeepThought
+	url = https://github.com/RatanShreshtha/DeepThought

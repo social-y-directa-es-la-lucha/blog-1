@@ -6,20 +6,14 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-
-    {% if config.extra.favicon.favicon_16x16 %}
     <link href='{{ config.extra.favicon.favicon_16x16 }}' rel="icon" sizes="16x16" type="image/png" />
-    {% endif %}
-    {% if config.extra.favicon.favicon_32x32 %}
     <link href='{{ config.extra.favicon.favicon_32x32 }}' rel="icon" sizes="32x32" type="image/png" />
-    {% endif %}
-    {% if config.extra.favicon.apple_touch_icon %}
     <link href='{{ config.extra.favicon.apple_touch_icon }}' rel="apple-touch-icon" sizes="180x180" />
-    {% endif %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>
         {% block title %}
         {{ config.title }}
@@ -28,55 +22,54 @@
 </head>
 
 <body>
-    <nav aria-label="section navigation" class="navbar has-background-black" role="navigation">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">
-                    <div>
-                        <figure class="image">
-                            <img src="{{config.base_url}}/images/icon.jfif">
-                        </figure>
-                    </div>
-                </a>
-                <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu"
-                    role="button">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="navbar-menu" id="navMenu">
-                <div class="navbar-end has-text-centered">
-                    {% for item in config.extra.navbar_items %}
-                    {% for nav in item.nav_items %}
-                    <a class="navbar-item has-text-light"
-                        href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
-                        {{ nav.name }}
+    <div class="animate__animated animate__slideInDown">
+        <nav aria-label="section navigation" class="navbar has-background-black" role="navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">
+                        <div>
+                            <figure class="image">
+                                <img src="{{config.base_url}}/images/icon.jfif">
+                            </figure>
+                        </div>
                     </a>
-                    {% endfor %}
-                    {% endfor %}
+                    <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu"
+                        role="button">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu" id="navMenu">
+                    <div class="navbar-end has-text-centered">
+                        {% for item in config.extra.navbar_items %}
+                        {% for nav in item.nav_items %}
+                        <a class="navbar-item has-text-light"
+                            href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
+                            {{ nav.name }}
+                        </a>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     {% block content %}
     {% endblock %}
     <footer class="footer">
         <div class="content has-text-right">
-            <span class="icon-text">
-                <span>
-                    <strong>Blog de la Coordinación Antirepresiva y por las libertades </strong>
-                    <span class="icon">
-                        <i class="fas fa-bomb fa-2x"></i>
+            <div class="content">
+                <span class="icon-text mlt-6">
+                    <span>
+                        <strong>TRANSFORMA LA INDIGNACIÓN EN LUCHA Y RESISTENCIA</strong>
+                        <span class="icon animate__animated animate__headShake animate__infinite">
+                            <i class="fas fa-bomb fa-2x"></i>
+                        </span>
                     </span>
                 </span>
-            </span>
-            <p>
-            </p>
+            </div>
             <span class="icon-text">
-                <span class="icon">
-                    <i class="fas fa-code"></i>
-                </span>
                 <span>
                     <a href="https://github.com/social-y-directa-es-la-lucha/blog-1.git">
                         Código libre</span></a>
@@ -86,6 +79,14 @@
             </span>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+    <script src="{{ get_url(path='elasticlunr.min.js') }}"></script>
+    <script src="{{ get_url(path='search_index.' ~ lang ~ '.js') }}"></script>
     <script src="{{ get_url(path='js/site.js') }}"></script>
     {% block custom_js %}
     {% endblock %}

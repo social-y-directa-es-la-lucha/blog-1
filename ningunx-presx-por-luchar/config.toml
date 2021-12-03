@@ -1,7 +1,7 @@
 base_url = "https://ningunx-presx-por-luchar.info"
 compile_sass = true
 build_search_index = false
-title="Hola"
+title="Blog"
 
 [markdown]
 highlight_code = true
@@ -14,6 +14,27 @@ navbar_items = [
     ] },
 ]
 
+[extra.favicon]
+favicon_16x16 = "icons/favicon-16x16.png"
+favicon_32x32 = "icons/favicon-32x32.png"
+apple_touch_icon = "icons/apple-touch-icon.png"
+safari_pinned_tab = "icons/safari-pinned-tab.svg"
+webmanifest = "icons/site.webmanifest"
+
+# Author details
 [extra.author]
+name = "DeepThought"
 avatar = "images/avatar.png"
-name="author"
+
+# Social links
+[extra.social]
+email = "<email_id>"
+facebook = "<facebook_username>"
+github = "<github_username>"
+gitlab = "<gitlab_username>"
+keybase = "<keybase_username>"
+linkedin = "<linkedin_username>"
+stackoverflow = "<stackoverflow_userid>"
+twitter = "<twitter_username>"
+instagram = "<instagram_usernaem>"
+behance = "<behance_username>"
