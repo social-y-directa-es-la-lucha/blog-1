@@ -1,3 +1,5 @@
+{% import 'macros.html' as macros %}
+
 <!DOCTYPE html>
 <html lang="{{lang}}">
 
@@ -26,10 +28,16 @@
 </head>
 
 <body>
-    <nav aria-label="section navigation" class="navbar is-dark" role="navigation">
+    <nav aria-label="section navigation" class="navbar has-background-black" role="navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">{{ config.title }}</a>
+                <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">
+                    <div>
+                        <figure class="image">
+                            <img src="{{config.base_url}}/images/icon.jfif">
+                        </figure>
+                    </div>
+                </a>
                 <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu"
                     role="button">
                     <span aria-hidden="true"></span>
@@ -41,7 +49,7 @@
                 <div class="navbar-end has-text-centered">
                     {% for item in config.extra.navbar_items %}
                     {% for nav in item.nav_items %}
-                    <a class="navbar-item has-text-weight-semibold"
+                    <a class="navbar-item has-text-light"
                         href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
                         {{ nav.name }}
                     </a>
@@ -51,13 +59,13 @@
             </div>
         </div>
     </nav>
-    {% block index %}
+    {% block content %}
     {% endblock %}
     <footer class="footer">
         <div class="content has-text-right">
             <span class="icon-text">
                 <span>
-                    <strong>La lucha es en la calle</strong>
+                    <strong>Blog de la Coordinación Antirepresiva y por las libertades </strong>
                     <span class="icon">
                         <i class="fas fa-bomb fa-2x"></i>
                     </span>
@@ -71,12 +79,19 @@
                 </span>
                 <span>
                     <a href="https://github.com/social-y-directa-es-la-lucha/blog-1.git">
-                        Repositorio de código</span></a>
+                        Código libre</span></a>
                 <span class="icon">
                     <i class="fas fa-code"></i>
                 </span>
             </span>
         </div>
     </footer>
+    <script src="{{ get_url(path='js/site.js') }}"></script>
+    {% block custom_js %}
+    {% endblock %}
+    {% block user_custom_js %}
+    {% endblock %}
 </body>
+
+
 </html>

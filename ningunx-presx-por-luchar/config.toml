@@ -1,6 +1,8 @@
 base_url = "https://ningunx-presx-por-luchar.info"
 compile_sass = true
 build_search_index = false
+title="Hola"
+
 [markdown]
 highlight_code = true
 [extra]
@@ -14,4 +16,4 @@ navbar_items = [
 
 [extra.author]
 avatar = "images/avatar.png"
-
+name="author"

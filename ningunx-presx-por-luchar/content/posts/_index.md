@@ -1,4 +1,3 @@
 +++
-title="publicaciones"
-template="Publicaciones.html"
+title="Publicaciones"
 +++
