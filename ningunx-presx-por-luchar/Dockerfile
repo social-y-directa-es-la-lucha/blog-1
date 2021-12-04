@@ -3,6 +3,7 @@ FROM ubuntu:latest AS ZOLA
 COPY . /site
 WORKDIR /site
 ADD https://github.com/getzola/zola/releases/download/v0.14.1/zola-v0.14.1-x86_64-unknown-linux-gnu.tar.gz /tmp
+RUN git submodule init
 RUN tar -C /usr/bin -xvzf /tmp/zola-v0.14.1-x86_64-unknown-linux-gnu.tar.gz && zola build && ls -R /site/public/
 
 FROM nginx:stable-alpine
