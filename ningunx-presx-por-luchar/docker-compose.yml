@@ -1,0 +1,6 @@
+version: '3'
+services:
+  zola:
+    build: .
+    ports:
+      - "80:80"
