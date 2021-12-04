@@ -18,7 +18,7 @@
                 <div class="columns">
                     <div class="column">
                         <div
-                            class="box has-background-danger animate__animated animate__pulse animate__infinite animate__slow">
+                            class="box has-background-danger-dark animate__animated animate__pulse animate__infinite animate__slow">
                             <figure class="image">
                                 <img src="images/marcha.jfif">
                             </figure>
@@ -57,13 +57,12 @@
         </form>
         <div class="box has-background-black">
             <figure class="image is-1by2">
-                <img src="images/radio.jpg">
+                <img src="{{get_url(path='images/radio.jpg')}}">
             </figure>
         </div>
         <div class="box">
             <div class="content">
-                {% set url = get_url(path="@/posts/_index.md") %}
-                <a href="{{url}}">
+                <a href="{{ get_url(path='@/posts/_index.md') }}">
                     <h1 class="title is-2 has-text-centered">
                         <span class="icon">
                             <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>

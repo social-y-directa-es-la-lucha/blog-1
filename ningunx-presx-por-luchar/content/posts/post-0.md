@@ -6,9 +6,11 @@ date=2021-11-28
 tags = ["Radio Alternativa", "Censura", "Violencia Institucional"]
 +++
 
-Extraído del volante que se difundió apenas 
+Extraído del volante que se difundió desde la coordinación en solidaridad con la
+Radio Alternativa FM 105.5 de Nuevo París
 
 <!-- more -->
+![Imagen1](../img1.jpg)
 
 # MENSAJES DE ODIO TE DIJERON Y TE DIJERON MAL
 
@@ -25,3 +27,4 @@ Por todo esto es que hacemos un llamado a luchar por la libertad de expresión y
 
 # ¡SOLIDARIDAD CON ALTERNATIVA FM!
 
+![Imagen2](../images/img1.jpg)
