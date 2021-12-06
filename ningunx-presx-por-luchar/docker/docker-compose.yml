@@ -5,7 +5,7 @@ services:
     build:
       context: ..
     volumes:
-      - public_files:/site/public/:ro
+      - public_files:/site/public/:rwo
 
   nginx:
     image: nginx:1.15-alpine
