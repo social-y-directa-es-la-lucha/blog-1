@@ -3,10 +3,11 @@ services:
   zola:
     image: balthek/zola:0.14.0 #Build once
     command: "build"
-    working_dir: /site
+    working_dir: /home/site
+    user: 1001:1001
     volumes:
-      - ..:/site:rw
-      - public_files:/site/public:rw
+      - ..:/home/site:rw
+      - public_files:/home/site:rw
 
   nginx:
     image: nginx
