@@ -13,7 +13,7 @@ serve:
 	zola serve
 
 link_zola_dockerfile:
-	@ln -s docker/zola . || exit 0
+	@ln -s docker/zola . 2>/dev/null || echo "Link already exists." && exit 0
 
 init:
 	git pull
