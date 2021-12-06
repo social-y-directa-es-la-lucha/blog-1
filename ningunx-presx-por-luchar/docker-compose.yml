@@ -27,8 +27,8 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c '\
-              cp -r /volume/public/* /usr/share/nginx/html && \
-              cp -r /nginx_config/* /etc/nginx &&\
+              cp -rf /volume/public/* /usr/share/nginx/html && \
+              cp -rf /nginx_config/* /etc/nginx &&\
               while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     
   certbot:
