@@ -13,6 +13,7 @@ serve:
 	zola serve
 
 link_zola_dockerfile:
+	@ln -s docker/Dockerfile . 2>/dev/null || exit 0
 	@ln -s docker/zola . 2>/dev/null || exit 0
 
 init:
