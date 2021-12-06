@@ -50,7 +50,10 @@ services:
     image: nginx:alpine
     container_name: www.ningunx-presx-por-luchar.info
     volumes:
-      - "./docker/nginx:/etc/nginx"
+      - "./docker/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./docker/nginx/sites-available:/etc/nginx/sites-available"
+      - "./docker/nginx/sites-enabled:/etc/nginx/sites-enabled"
+      - "./docker/nginx/nginxconfig.io/:/etc/nginx/nginxconfig.io/"
       - "public_files:/usr/share/nginx"
     depends_on:
       - nginx-proxy
