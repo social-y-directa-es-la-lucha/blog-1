@@ -10,7 +10,6 @@ services:
   nginx:
     build:
       context: nginx/
-      dockerfile: nginx/Dockerfile
       args:
         SITE_URL: ningunx-presx-por-luchar.info
     depends_on:
