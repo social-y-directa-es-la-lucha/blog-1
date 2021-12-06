@@ -10,5 +10,4 @@ RUN dockerize -n --verbose -o /workdir /usr/bin/zola
 
 FROM scratch
 COPY --from=builder /workdir .
-RUN mkdir /public && chmod 755 /public
 ENTRYPOINT [ "/usr/bin/zola" ]
