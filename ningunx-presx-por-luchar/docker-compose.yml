@@ -9,7 +9,11 @@ services:
       - .:/site:rw
       - public_files:/volume:rw
 
+  ## NGINX Reverse proxy
   nginx-proxy:
+    depends_on:
+      - "zola"
+      - "letsencrypt-nginx-proxy-companion"
     ports:
       - '80:80'
       - '443:443'
@@ -20,9 +24,8 @@ services:
       - /usr/share/nginx/html
       - '/var/run/docker.sock:/tmp/docker.sock:ro'
     labels:
-      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     image: jwilder/nginx-proxy
-    
   letsencrypt-nginx-proxy-companion:
     container_name: nginx-letsencrypt
     volumes:
@@ -31,7 +34,9 @@ services:
     image: jrcs/letsencrypt-nginx-proxy-companion
 
   httpd:
-    container_name: site-b
+    depends_on:
+      - "nginx-proxy"
+    container_name: blog
     environment:
       - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
       - LETSENCRYPT_EMAIL=ozerno@protonmail.com
