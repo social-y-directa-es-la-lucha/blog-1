@@ -12,7 +12,7 @@ serve:
 	zola serve
 
 start_dir:
-	@git pull
+	@git pull --force
 
 logs:
 	cd docker && docker-compose logs
