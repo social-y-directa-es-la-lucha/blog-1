@@ -21,7 +21,7 @@ logs:
 init:
 	make start_dir
 	cd docker && \
-	sudo bash ./init-script.bash
+	sudo bash ./init.sh
 
 down:
 	cd docker && \
