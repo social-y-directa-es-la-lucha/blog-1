@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM nginx
 
 RUN set -x && SITE_NAME=$(echo "$SITE_URL" | cut -d"." -f1) && \
     apt-get update -y && \

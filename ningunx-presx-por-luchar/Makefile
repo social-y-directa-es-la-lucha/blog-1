@@ -11,3 +11,8 @@ build:
 
 serve:
 	zola serve
+
+init:
+	cd docker/nginx && \
+	chmod +x init-script.bash && \
+	sudo ./init-script.bash

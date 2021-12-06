@@ -1,7 +1,7 @@
 version: '3'
 services:
   zola:
-    image: zola_builder:latest
+    image: zola_builder:latest #Build once
     build:
       context: ..
       dockerfile: zola
@@ -9,18 +9,34 @@ services:
       - public_files:/site/public/:ro
 
   nginx:
-    build:
-      context: nginx/
-      args:
-        SITE_URL: ningunx-presx-por-luchar.info
+    image: nginx:1.15-alpine
+    restart: unless-stopped
+    volumes:
+    ports:
+      - "80:80"
+      - "443:433"
+    environment:
+      - NGINX_HOST=ningunx-presx-por-luchar.info
+      - NGINX_PORT=80
+      - NGINX_ENTRYPOINT_QUIET_LOGS=1
     depends_on:
       - "zola"
     volumes:
+      - ./nginx_conf:/etc/nginx/templates
       - public_files:/usr/share/nginx/html/:ro
-      - /private/var/services/ningunx-presx-por-luchar/nginx/letsencrypt:/etc/letsencrypt
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
     ports:
       - 80:80
       - 443:443
     
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot re1w; sleep 12h & wait $${!}; done;'"
+
 volumes:
   public_files:
