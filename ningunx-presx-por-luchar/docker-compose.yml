@@ -11,6 +11,8 @@ services:
 
   nginx:
     image: nginx
+    depends_on:
+      - "zola"
     restart: unless-stopped
     ports:
       - 80:80
