@@ -20,7 +20,7 @@ services:
       - 80:80
       - 443:443
     args:
-      - "SITE_URL=ningunx-presx-por-luchar.info"
+      SITE_URL: ningunx-presx-por-luchar.info
 
 volumes:
   public_files:
