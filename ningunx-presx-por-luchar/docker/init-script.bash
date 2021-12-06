@@ -72,6 +72,9 @@ docker-compose run --rm --entrypoint "\
     $staging_arg \
     $email_arg \
     $domain_args \
+    --dns-digitalocean \
+    --dns-digitalocean-credentials ~/.secrets/certbot/digitalocean.ini \
+    --dns-digitalocean-propagation-seconds 30 \
     --rsa-key-size $rsa_key_size \
     --agree-tos \
     --force-renewal" certbot
