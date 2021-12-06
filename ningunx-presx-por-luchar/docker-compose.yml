@@ -24,6 +24,7 @@ services:
     volumes:
       - public_files:/volume:rw
       - ./docker/nginx:/nginx_config:rw
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./data/certbot/conf:/etc/letsencrypt/live:rw
       - ./data/certbot/www:/var/www/certbot:rw
     command: "/bin/sh -c '\
