@@ -54,6 +54,7 @@ services:
       - "./docker/nginx/sites-available:/etc/nginx/sites-available"
       - "./docker/nginx/sites-enabled:/etc/nginx/sites-enabled"
       - "./docker/nginx/nginxconfig.io/:/etc/nginx/nginxconfig.io/"
+      - "$HOME/certs:/etc/letsencrypt/ningunx-presx-por-luchar.info/"
       - "public_files:/usr/share/nginx"
     depends_on:
       - nginx-proxy
