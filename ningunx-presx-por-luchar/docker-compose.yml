@@ -28,7 +28,7 @@ services:
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c '\
               mkdir -p /volume/public/usr/share/nginx/html && \
-              cp /nginx_config/* /etc/nginx &&\
+              cp -r /nginx_config/* /etc/nginx &&\
               while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     
   certbot:
