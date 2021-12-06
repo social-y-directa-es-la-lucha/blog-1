@@ -2,7 +2,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: 'checkout'
         uses: actions/checkout@v2
@@ -13,17 +13,4 @@ jobs:
           BUILD_DIR: ningunx-presx-por-luchar
           TOKEN: ${{ secrets.TOKEN }}
           # BUILD_ONLY: true
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: 'checkout'
-        uses: actions/checkout@v2
-      - name: 'build and deploy'
-        uses: shalzz/zola-deploy-action@v0.13.0
-        env:
           BUILD_FLAGS: "--base-url https://social-y-directa-es-la-lucha.github.io/blog-1/"
-          PAGES_BRANCH: master
-          BUILD_DIR: .
-          TOKEN: ${{ secrets.PUBLIC_TOKEN }}
-          REPOSITORY: username/username.github.io
