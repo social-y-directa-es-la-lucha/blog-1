@@ -1,0 +1,52 @@
+version: '3'
+services:
+  zola:
+    image: balthek/zola:0.14.0 #Build once
+    command: "build --output-dir /volume/public"
+    working_dir: /site
+    privileged: true
+    volumes:
+      - .:/site:rw
+      - public_files:/volume:rw
+
+  ## NGINX Reverse proxy
+  nginx-proxy:
+    depends_on:
+      - "zola"
+      - "letsencrypt-nginx-proxy-companion"
+    ports:
+      - '80:80'
+      - '443:443'
+    container_name: nginx-proxy
+    volumes:
+      - '$HOME/certs:/etc/nginx/certs:ro'
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - '/var/run/docker.sock:/tmp/docker.sock:ro'
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    image: jwilder/nginx-proxy
+  letsencrypt-nginx-proxy-companion:
+    container_name: nginx-letsencrypt
+    volumes:
+      - '$HOME/certs:/etc/nginx/certs:rw'
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    image: jrcs/letsencrypt-nginx-proxy-companion
+  ## Fin
+
+  httpd:
+    depends_on:
+      - "nginx-proxy"
+    container_name: blog
+    environment:
+      - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
+      - LETSENCRYPT_EMAIL=ozerno@protonmail.com
+      - LETSENCRYPT_HOST=www.ningunx-presx-por-luchar.info
+    volumes:
+      - public_files:/usr/local/apache2/htdocs/:rw
+    image: httpd
+
+volumes:
+  public_files:

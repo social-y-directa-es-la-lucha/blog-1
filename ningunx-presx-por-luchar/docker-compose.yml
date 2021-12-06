@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   zola:
     image: balthek/zola:0.14.0 #Build once
@@ -8,45 +8,60 @@ services:
     volumes:
       - .:/site:rw
       - public_files:/volume:rw
-
-  ## NGINX Reverse proxy
   nginx-proxy:
     depends_on:
       - "zola"
-      - "letsencrypt-nginx-proxy-companion"
+    image: jwilder/nginx-proxy
+    container_name: proxy
     ports:
-      - '80:80'
-      - '443:443'
-    container_name: nginx-proxy
+      - 80:80
+      - 443:443
     volumes:
-      - '$HOME/certs:/etc/nginx/certs:ro'
+      - /var/run/docker.sock:/tmp/docker.sock:ro
       - /etc/nginx/vhost.d
+      - $HOME/certs:/etc/nginx/certs:ro
       - /usr/share/nginx/html
-      - '/var/run/docker.sock:/tmp/docker.sock:ro'
+    networks:
+      - proxy_net
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
-    image: jwilder/nginx-proxy
-  letsencrypt-nginx-proxy-companion:
-    container_name: nginx-letsencrypt
-    volumes:
-      - '$HOME/certs:/etc/nginx/certs:rw'
-      - /etc/nginx/vhost.d
-      - /usr/share/nginx/html
-      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+  letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
-  ## Fin
-
-  httpd:
+    container_name: encrypt
     depends_on:
-      - "nginx-proxy"
-    container_name: blog
+      - nginx-proxy
+    volumes:
+      - $HOME/certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - nginx-proxy
+    networks:
+      - proxy_net
+  certs:
+    image: tutum/apache-php
+    container_name: certs
+    environment:
+      - VIRTUAL_HOST=ningunx-presx-por-luchar.info,www.ningunx-presx-por-luchar.info
+      - LETSENCRYPT_HOST=ningunx-presx-por-luchar.info,www.ningunx-presx-por-luchar.info
+      - LETSENCRYPT_EMAIL=ozerno@protonmail.com
+    networks:
+      - cert_net
+  nginx:
+    image: nginx:alpine
+    container_name: www.ningunx-presx-por-luchar.info
+    depends_on:
+      - nginx-proxy
+      - letsencrypt
     environment:
       - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
-      - LETSENCRYPT_EMAIL=ozerno@protonmail.com
-      - LETSENCRYPT_HOST=www.ningunx-presx-por-luchar.info
-    volumes:
-      - public_files:/usr/local/apache2/htdocs/:rw
-    image: httpd
+    networks:
+      - proxy_net
+      
+networks:
+  cert_net:
+    driver: bridge
+  proxy_net:
+    driver: bridge
 
 volumes:
   public_files:
