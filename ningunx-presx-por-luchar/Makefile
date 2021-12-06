@@ -22,3 +22,7 @@ init:
 	make start_dir
 	cd docker && \
 	sudo bash ./init-script.bash
+
+down:
+	cd docker && \
+	docker-compose down
