@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ningunx-presx-por-luchar.info www.ningunx-presx-por-luchar.info;
+
+    location ~ /.well-known/acme-challenge {
+        allow all;
+        root /var/www/html;
+    }
+}

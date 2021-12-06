@@ -1,0 +1,26 @@
+version: '3'
+services:
+  zola:
+    build:
+      context: ..
+      dockerfile: zola
+    volumes:
+      - public_files:/site/public/:ro
+
+  nginx:
+    build:
+      context: nginx/
+      dockerfile: nginx/Dockerfile
+    depends_on:
+      - "zola"
+    volumes:
+      - public_files:/usr/share/nginx/html/:ro
+      - /private/var/services/ningunx-presx-por-luchar/nginx/letsencrypt:/etc/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+    args:
+      - "SITE_URL=ningunx-presx-por-luchar.info"
+
+volumes:
+  public_files:
