@@ -2,7 +2,7 @@ version: "3"
 services:
   zola:
     image: balthek/zola:0.14.0 #Build once
-    command: "build --output-dir /volume/public"
+    command: "build --output-dir /volume/html"
     working_dir: /site
     privileged: true
     volumes:
@@ -49,6 +49,9 @@ services:
   nginx:
     image: nginx:alpine
     container_name: www.ningunx-presx-por-luchar.info
+    volumes:
+      - "./docker/nginx:/etc/nginx"
+      - "public_files:/usr/share/nginx"
     depends_on:
       - nginx-proxy
       - letsencrypt
