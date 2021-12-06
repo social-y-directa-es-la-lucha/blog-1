@@ -4,7 +4,7 @@ services:
     image: balthek/zola:0.14.0 #Build once
     command: "build"
     working_dir: /home/site
-    user: 1001:1001
+    privileged: true
     volumes:
       - .:/home/site:rw
       - public_files:/home/site/public:rw
