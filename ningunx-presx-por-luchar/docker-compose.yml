@@ -2,12 +2,12 @@ version: '3'
 services:
   zola:
     image: balthek/zola:0.14.0 #Build once
-    command: "build --output-dir /tmp/public"
+    command: "build --output-dir /volume/public"
     working_dir: /site
     privileged: true
     volumes:
       - .:/site:rw
-      - public_files:/tmp/public:rw
+      - public_files:/volume:rw
 
   nginx:
     image: nginx
@@ -20,11 +20,11 @@ services:
     environment:
       - NGINX_ENTRYPOINT_QUIET_LOGS=1
     volumes:
-      - public_files:/usr/share/nginx/html/:rw
+      - public_files:/volume:rw
       - ./docker/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: "/bin/sh -c 'cp /volume/public/* /usr/share/nginx/html/ && while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     
   certbot:
     image: certbot/dns-digitalocean
