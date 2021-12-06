@@ -12,4 +12,6 @@ RUN chmod u+x zola
 
 FROM debian:buster-slim
 WORKDIR /
+RUN apt install -y g++ \
+    libssl-dev \
 COPY --from=fetcher /zola /usr/local/bin/zola
