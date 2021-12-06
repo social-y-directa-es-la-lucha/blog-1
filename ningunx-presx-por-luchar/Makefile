@@ -19,5 +19,4 @@ init:
 	git pull
 	make link_zola_dockerfile
 	cd docker && \
-	chmod +x init-script.bash && \
-	sudo ./init-script.bash
+	sudo bash ./init-script.bash
