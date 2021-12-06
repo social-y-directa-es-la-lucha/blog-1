@@ -5,7 +5,7 @@ up:
 	docker-compose up -d
 
 build:
-	ln -s docker/zola . || exit 0
+	make link_zola_dockerfile
 	cd docker && \
 	docker-compose build
 
