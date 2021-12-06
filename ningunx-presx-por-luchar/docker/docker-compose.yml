@@ -1,6 +1,7 @@
 version: '3'
 services:
   zola:
+    image: zola_builder:latest
     build:
       context: ..
       dockerfile: zola
