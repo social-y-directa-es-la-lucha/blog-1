@@ -68,7 +68,7 @@ services:
       - "public_files:/usr/share/nginx"
     depends_on:
       - nginx-proxy
-      - letsencrypt
+      - acme-companion
     environment:
       - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
       - VIRTUAL_PORT=80
