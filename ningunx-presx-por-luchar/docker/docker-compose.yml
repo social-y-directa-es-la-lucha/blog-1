@@ -4,7 +4,7 @@ services:
     image: zola_builder:latest #Build once
     build:
       context: ..
-    command: "zola build --outputdir /public"
+    command: "/usr/local/bin/zola build --outputdir /public"
     volumes:
       - .:/site:rw
       - public_files:/public:rw
