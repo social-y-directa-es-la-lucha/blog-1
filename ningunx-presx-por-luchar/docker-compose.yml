@@ -20,8 +20,8 @@ services:
     container_name: nginx-proxy
     volumes:
       - '$HOME/certs:/etc/nginx/certs:ro'
-      - /etc/nginx/vhost.d:rw
-      - /usr/share/nginx/html:rw
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
       - '/var/run/docker.sock:/tmp/docker.sock:ro'
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
@@ -30,6 +30,7 @@ services:
     container_name: nginx-letsencrypt
     volumes:
       - '$HOME/certs:/etc/nginx/certs:rw'
+      - /etc/nginx/vhost.d
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
     image: jrcs/letsencrypt-nginx-proxy-companion
   ## Fin
