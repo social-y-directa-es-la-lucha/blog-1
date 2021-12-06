@@ -20,7 +20,7 @@ services:
       - "zola"
     volumes:
       - ./nginx:/etc/nginx/conf.d
-      - public_files:/usr/share/nginx/html/:r
+      - public_files:/usr/share/nginx/html/
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-      - ~/.secrets/certbot/digitalocean.ini:/digitalocean.ini:600
+      - ~/.secrets/certbot/digitalocean.ini:/digitalocean.ini
     entrypoint: "/bin/sh -c 'rm -rf ~/digitalocean.ini; trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
