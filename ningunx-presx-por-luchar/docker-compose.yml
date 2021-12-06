@@ -10,6 +10,7 @@ services:
       - public_files:/volume:rw
 
   nginx:
+    name: nginx
     image: nginx
     depends_on:
       - "zola"
