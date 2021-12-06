@@ -10,5 +10,4 @@ RUN dockerize -n --verbose -o /workdir /usr/bin/zola
 
 FROM ubuntu
 COPY --from=builder /workdir .
-RUN apt-get update
 ENTRYPOINT [ "/usr/bin/zola" ]
