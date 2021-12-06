@@ -7,7 +7,7 @@ services:
     privileged: true
     volumes:
       - .:/site:rw
-      - public_files:/tmp/public:rw
+      - ./public:/tmp/public:rw
 
   nginx:
     image: nginx
@@ -18,8 +18,8 @@ services:
     environment:
       - NGINX_ENTRYPOINT_QUIET_LOGS=1
     volumes:
-      - public_files:/usr/share/nginx/html/:ro
-      - ./nginx:/etc/nginx/conf.d
+      - ./public:/usr/share/nginx/html/:ro
+      - ./docker/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
