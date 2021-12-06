@@ -2,7 +2,6 @@ base_url = "https://ningunx-presx-por-luchar.info"
 compile_sass = true
 build_search_index = false
 title="Coordinación Antirepresiva y por las Libertades"
-theme="DeepThought"
 
 taxonomies = [
     { name = "tags", fees = false, paginate_by = 10 },
