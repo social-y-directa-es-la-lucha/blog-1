@@ -5,6 +5,7 @@ services:
     build:
       context: ..
     volumes:
+      - .:/site:rw
       - public_files:/site/public:rw
 
   nginx:
