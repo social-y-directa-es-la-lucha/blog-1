@@ -11,6 +11,8 @@ RUN curl -sL $(curl -s https://api.github.com/repos/getzola/zola/releases/latest
 RUN chmod u+x zola
 
 FROM debian:buster-slim
-RUN apt install -y g++ \
+RUN apt-get update && \
+    apt-get install -y \
+    g++ \
     libssl-dev
 COPY --from=fetcher /zola /usr/local/bin/zola
