@@ -4,12 +4,13 @@ services:
     image: zola_builder:latest #Build once
     build:
       context: ..
+    command: "build --outputdir /public"
     volumes:
       - .:/site:rw
-      - public_files:/site/public:rw
+      - public_files:/public:rw
 
   nginx:
-    image: nginx:1.15-alpine
+    image: nginx
     restart: unless-stopped
     ports:
       - 80:80

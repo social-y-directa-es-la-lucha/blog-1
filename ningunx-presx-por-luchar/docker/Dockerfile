@@ -1,10 +1,14 @@
-FROM alpine
-ENV ZOLA_PATH="/usr/bin/zola"
-ENV OUTPUT_DIR="/site/public"
-COPY docker/zola $ZOLA_PATH
-RUN chmod +x "$ZOLA_PATH" && \
-    ls /usr/bin | grep "zola"
+FROM bitnami/minideb AS builder
+ENV ZOLA_VERSION v0.15.0
+RUN install_packages python-pip curl tar python-setuptools rsync binutils
+RUN pip install dockerize
+RUN mkdir -p /workdir
+WORKDIR /workdir
+RUN curl -L https://github.com/getzola/zola/releases/download/$ZOLA_VERSION/zola-$ZOLA_VERSION-x86_64-unknown-linux-gnu.tar.gz | tar xz
+RUN mv zola /usr/bin
+RUN dockerize -n --verbose -o /workdir /usr/bin/zola
 
-WORKDIR /site
-RUN chmod -R 777 .
-CMD ["zola", "build", "--output-dir" "$OUTPUT_DIR"]
+FROM scratch
+COPY --from=builder /workdir .
+RUN mkdir /public && chmod 755 /public
+ENTRYPOINT [ "/usr/bin/zola" ]
