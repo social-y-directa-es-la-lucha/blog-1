@@ -60,6 +60,7 @@ services:
       - letsencrypt
     environment:
       - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
+      - VIRTUAL_PORT=80
     networks:
       - proxy_net
       
