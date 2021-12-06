@@ -25,7 +25,7 @@ services:
     volumes:
       - public_files:/volume:rw
       - ./docker/nginx:/nginx_config:rw
-      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/conf:/etc/letsencrypt/live
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c '\
               cp -rf /volume/public/* /usr/share/nginx/html/ && \
