@@ -18,9 +18,9 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /etc/nginx/vhost.d
-      - $HOME/certs:/etc/nginx/certs:ro
-      - /usr/share/nginx/html
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
     networks:
       - proxy_net
     labels:
@@ -31,6 +31,10 @@ services:
       - cert_net
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - 'acme:/etc/acme.sh'
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
     environment:
       - DEFAULT_EMAIL=ozerno@protonmail.com
     image: nginxproxy/acme-companion
@@ -46,15 +50,6 @@ services:
     #  - nginx-proxy
     #networks:
     #  - proxy_net
-  certs:
-    image: tutum/apache-php
-    container_name: certs
-    environment:
-      - VIRTUAL_HOST=ningunx-presx-por-luchar.info,www.ningunx-presx-por-luchar.info
-      - LETSENCRYPT_HOST=ningunx-presx-por-luchar.info,www.ningunx-presx-por-luchar.info
-      - LETSENCRYPT_EMAIL=ozerno@protonmail.com
-    networks:
-      - cert_net
   nginx:
     image: nginx:alpine
     container_name: www.ningunx-presx-por-luchar.info
@@ -84,3 +79,7 @@ networks:
 
 volumes:
   public_files:
+  acme:
+  certs:
+  vhost:
+  html:
