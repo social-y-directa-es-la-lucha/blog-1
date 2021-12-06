@@ -15,6 +15,9 @@ serve:
 link_zola_dockerfile:
 	@ln -s docker/Dockerfile . 2>/dev/null || exit 0
 
+logs:
+	cd docker && docker-compose logs
+
 init:
 	git pull
 	make link_zola_dockerfile
