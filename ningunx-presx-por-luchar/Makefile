@@ -2,7 +2,7 @@ up:
 	git pull
 	make link_zola_dockerfile
 	cd docker && \
-	docker-compose up -d
+	docker-compose up -d --force-recreate
 
 build:
 	make link_zola_dockerfile
