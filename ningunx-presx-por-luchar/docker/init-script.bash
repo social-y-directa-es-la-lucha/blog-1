@@ -68,8 +68,6 @@ esac
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 docker-compose run --rm --entrypoint "\
-  snap install core; snap refresh core &&
-  snap install certbot-dns-digitalocean && \
   certbot certonly --webroot -w /var/www/certbot \
     $staging_arg \
     $email_arg \
