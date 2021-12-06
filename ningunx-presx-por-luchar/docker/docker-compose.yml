@@ -4,7 +4,6 @@ services:
     image: zola_builder:latest #Build once
     build:
       context: ..
-      dockerfile: zola
     volumes:
       - public_files:/site/public/:ro
 
