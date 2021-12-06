@@ -1,6 +1,6 @@
 up:
 	git pull
-	ln -s docker/zola .
+	ln docker/zola .
 	cd docker && \
 	docker-compose build && \
 	docker-compose up -d
