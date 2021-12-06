@@ -17,9 +17,9 @@ RUN add-apt-repository ppa:certbot/certbot && \
 ADD nginx_conf /etc/nginx/sites-available/$SITE_URL
 RUN ln -s /etc/nginx/sites-available/$SITE_URL /etc/nginx/sites-enabled/$SITE_NAME
 
-ADD config/$SITE_URL /etc/nginx/sites-available/$SITE_URL
-ADD certs/server.crt /etc/nginx/certs/server.crt
-ADD certs/server.key /etc/nginx/certs/server.key
+#ADD config/$SITE_URL /etc/nginx/sites-available/$SITE_URL
+#ADD certs/server.crt /etc/nginx/certs/server.crt
+#ADD certs/server.key /etc/nginx/certs/server.key
 
 EXPOSE 80 443
 WORKDIR /etc/nginx
