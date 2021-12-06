@@ -1,9 +1,7 @@
 version: '3'
 services:
   zola:
-    image: dockr #Build once
-    build:
-      context: ..
+    image: docker pull balthek/zola:0.14.0 #Build once
     command: "/usr/local/bin/zola build --outputdir /public"
     volumes:
       - .:/site:rw
@@ -15,13 +13,13 @@ services:
     ports:
       - 80:80
       - 443:443
-    #environment:
-    #  - NGINX_ENTRYPOINT_QUIET_LOGS=1
+    environment:
+      - NGINX_ENTRYPOINT_QUIET_LOGS=1
     depends_on:
       - "zola"
     volumes:
-      - ./nginx:/etc/nginx/conf.d
       - public_files:/usr/share/nginx/html/:ro
+      - ./nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
