@@ -11,6 +11,8 @@ services:
     build:
       context: nginx/
       dockerfile: nginx/Dockerfile
+      args:
+        SITE_URL: ningunx-presx-por-luchar.info
     depends_on:
       - "zola"
     volumes:
@@ -19,8 +21,6 @@ services:
     ports:
       - 80:80
       - 443:443
-    args:
-      SITE_URL: ningunx-presx-por-luchar.info
-
+    
 volumes:
   public_files:
