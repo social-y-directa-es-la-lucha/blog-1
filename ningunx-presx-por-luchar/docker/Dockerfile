@@ -8,6 +8,6 @@ WORKDIR /site
 COPY docker/zola $ZOLA_PATH
 
 RUN chmod +x "$ZOLA_PATH" && \
-    chmod -R 777 /site
+    chmod -R 777 .
 
 CMD ["$ZOLA_PATH", "build", "--output-dir" "$OUTPUT_DIR"]
