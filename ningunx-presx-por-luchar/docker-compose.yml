@@ -31,7 +31,6 @@ services:
       - cert_net
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
-      - 'acme:/etc/acme.sh'
     environment:
       - DEFAULT_EMAIL=ozerno@protonmail.com
     image: nginxproxy/acme-companion
