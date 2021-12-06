@@ -1,11 +1,14 @@
 server {
-    listen ${NGINX_PORT};
-    listen [::]:${NGINX_PORT};
-    server_name ${NGINX_HOST} www.${NGINX_HOST};
+    listen  ${NGINX_PORT};
+    server_name ${NGINX_HOST};
+    server_tokens off;
 
-    location ~ /.well-known/acme-challenge {
-        allow all;
-        root /var/www/html;
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
     }
 }
 

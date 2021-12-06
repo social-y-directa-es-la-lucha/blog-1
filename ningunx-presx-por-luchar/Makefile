@@ -13,6 +13,7 @@ serve:
 	zola serve
 
 init:
-	cd docker/nginx && \
+	git pull
+	cd docker && \
 	chmod +x init-script.bash && \
 	sudo ./init-script.bash
