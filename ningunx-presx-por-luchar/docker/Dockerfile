@@ -1,18 +1,20 @@
-FROM rust:slim-buster AS fetcher
+FROM ubuntu:20.04 AS builder
 WORKDIR /
 RUN apt-get update && \
-    apt-get install -y curl
-RUN curl -sL $(curl -s https://api.github.com/repos/getzola/zola/releases/latest | \
-    grep browser_download_url | \
-    grep -i $(uname -s) | \
-    cut -d : -f 2,3 | \
-    sed 's/"//g') | \
-    tar zxf -
-RUN chmod u+x zola
-
-FROM debian:buster-slim
-RUN apt-get update && \
     apt-get install -y \
-    g++ \
-    libssl-dev
-COPY --from=fetcher /zola /usr/local/bin/zola
+      curl \
+      git \
+      g++ \
+      libssl-dev \
+      make
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup.sh && \
+    chmod +x rustup.sh && \
+    ./rustup.sh -y
+RUN git clone https://github.com/getzola/zola.git
+WORKDIR /zola
+RUN git checkout v0.12.2 && \
+    /root/.cargo/bin/cargo build --release
+
+FROM ubuntu:20.04
+WORKDIR /
+COPY --from=builder /zola/target/release/zola /usr/local/bin/zola

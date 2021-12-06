@@ -1,7 +1,7 @@
 version: '3'
 services:
   zola:
-    image: zola_builder:latest #Build once
+    image: dockr #Build once
     build:
       context: ..
     command: "/usr/local/bin/zola build --outputdir /public"
