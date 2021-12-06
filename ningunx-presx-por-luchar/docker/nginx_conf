@@ -3,7 +3,7 @@ server {
     server_name ${NGINX_HOST} www.${NGINX_HOST};
     server_tokens off;
 
-    location /.well-known/acme-challenge/ {
+    location ^~  /.well-known/acme-challenge/ {
         root /var/www/certbot;
     }
 
