@@ -1,7 +1,7 @@
 up:
 	make start_dir
 	cd docker && \
-	docker-compose up -d --force-recreate
+	docker-compose up -d --force-recreate --remove-orphans
 
 build:
 	make start_dir
@@ -13,15 +13,9 @@ serve:
 
 start_dir:
 	@git pull
-	@ln -s docker/init.sh . 2>/dev/null || exit 0
 
 logs:
 	cd docker && docker-compose logs
-
-init:
-	make start_dir
-	cd docker && \
-	sudo bash ./init.sh
 
 down:
 	cd docker && \
