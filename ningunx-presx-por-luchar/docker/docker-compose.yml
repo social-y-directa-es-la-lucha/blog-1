@@ -2,7 +2,7 @@ version: '3'
 services:
   zola:
     image: balthek/zola:0.14.0 #Build once
-    command: "/usr/local/bin/zola build --outputdir /public"
+    command: "build --outputdir /public"
     volumes:
       - .:/site:rw
       - public_files:/public:rw
