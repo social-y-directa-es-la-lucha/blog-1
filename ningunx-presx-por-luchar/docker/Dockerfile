@@ -6,4 +6,5 @@ RUN chmod +x "$ZOLA_PATH" && \
     chmod -R 777 . && \
     ls /usr/bin | grep "zola"
 
+WORKDIR /site
 CMD ["zola", "build", "--output-dir" "$OUTPUT_DIR"]
