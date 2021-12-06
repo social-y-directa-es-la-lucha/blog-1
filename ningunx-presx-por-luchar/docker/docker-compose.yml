@@ -32,7 +32,7 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
       - ~/.secrets/certbot/digitalocean.ini:/digitalocean.ini
-    entrypoint: "/bin/sh -c 'rm -rf ~/digitalocean.ini; trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   public_files:
