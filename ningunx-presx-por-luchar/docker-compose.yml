@@ -2,12 +2,12 @@ version: '3'
 services:
   zola:
     image: balthek/zola:0.14.0 #Build once
-    command: "build"
+    command: "build --output-dir /tmp/public"
     working_dir: /home/site
     privileged: true
     volumes:
-      - .:/home/site:rw
-      - public_files:/home/site/public:rw
+      - .:/site:rw
+      - public_files:/tmp/public:rw
 
   nginx:
     image: nginx
