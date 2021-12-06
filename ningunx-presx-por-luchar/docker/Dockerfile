@@ -5,4 +5,5 @@ COPY docker/zola $ZOLA_PATH
 RUN chmod +x "$ZOLA_PATH" && \
     chmod -R 777 . && \
     ls /usr/bin | grep "zola"
-CMD ["$ZOLA_PATH", "build", "--output-dir" "$OUTPUT_DIR"]
+
+CMD ["zola", "build", "--output-dir" "$OUTPUT_DIR"]
