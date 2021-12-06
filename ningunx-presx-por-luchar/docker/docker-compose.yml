@@ -1,7 +1,7 @@
 version: '3'
 services:
   zola:
-    image: docker pull balthek/zola:0.14.0 #Build once
+    image: balthek/zola:0.14.0 #Build once
     command: "/usr/local/bin/zola build --outputdir /public"
     volumes:
       - .:/site:rw
