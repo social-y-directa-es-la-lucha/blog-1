@@ -29,7 +29,7 @@ services:
     volumes:
       - ./data:/config
       - ./public/www:/config/www
-      - ~/.secrets/certbot/digitalocean.ini:/config/dns-conf
+      - ~/.secrets/certbot:/config/dns-conf
     ports:
       - 443:443
       - 80:80
