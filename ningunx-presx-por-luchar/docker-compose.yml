@@ -7,7 +7,7 @@ services:
     privileged: true
     volumes:
       - .:/site:rw
-      - public_files:/www:rw
+      - ./public/www:/www:rw
 
   swag:
     depends_on:
@@ -21,13 +21,15 @@ services:
       - PGID=1000
       - TZ=America/Montevideo
       - URL=ningunx-presx-por-luchar.info
-      - SUBDOMAINS=www
-      - VALIDATION=http
+      - SUBDOMAINS=wildcard
+      - VALIDATION=dns
+      - DNSPLUGIN=digitalocean
       - EMAIL=ozerno@protonmail.com
       - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
-      - public_files:/config/www:rw
+      - ./public/www:/config/www
+      - ~/.secrets/certbot/digitalocean.ini:/config/dns-conf
     ports:
       - 443:443
       - 80:80
