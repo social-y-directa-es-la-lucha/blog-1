@@ -1,7 +1,7 @@
 version: "3"
 services:
   zola:
-    image: balthek/zola:0.15.0 #Build once
+    image: balthek/zola:0.14.0 #Build once
     command: "build --output-dir /www"
     working_dir: /site
     privileged: true
@@ -24,7 +24,6 @@ services:
       - SUBDOMAINS=www
       - VALIDATION=http
       - EMAIL=ozerno@protonmail.com
-      - STAGING=true
       - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
