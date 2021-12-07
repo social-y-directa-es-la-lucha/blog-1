@@ -1,13 +1,13 @@
 version: "3"
 services:
   zola:
-    image: balthek/zola:0.14.0 #Build once
+    image: balthek/zola:0.15.0 #Build once
     command: "build --output-dir /www"
     working_dir: /site
     privileged: true
     volumes:
       - .:/site:rw
-      - ./public:/www:rw
+      - ./public/www:/www:rw
 
   swag:
     depends_on:
@@ -28,7 +28,7 @@ services:
       - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
-      - ./public:/config/www:ro
+      - ./public/www:/config/www:rw
     ports:
       - 443:443
       - 80:80
