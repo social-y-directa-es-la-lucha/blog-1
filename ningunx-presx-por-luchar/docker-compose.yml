@@ -67,7 +67,7 @@ services:
       - acme-companion
     environment:
       - VIRTUAL_HOST=www.ningunx-presx-por-luchar.info
-      - LETSENCRYPT_HOST=ningunx-presx-por-luchar.info,www.ningunx-presx-por-luchar.info
+      - LETSENCRYPT_HOST=ningunx-presx-por-luchar.info
       - LETSENCRYPT_EMAIL=ozerno@protonmail.com
     networks:
       - proxy_net
