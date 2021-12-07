@@ -1,0 +1,1 @@
+docker run -v "$(pwd):/app" --workdir /app balthek/zola:0.14.0 build
