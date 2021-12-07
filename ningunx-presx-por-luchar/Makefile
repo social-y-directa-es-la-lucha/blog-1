@@ -20,3 +20,4 @@ logs:
 down:
 	cd docker && \
 	docker-compose down
+	docker system prune -a
