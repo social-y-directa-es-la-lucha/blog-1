@@ -16,7 +16,7 @@ services:
     ports:
       - 80:80
       - 443:443
-    environments:
+    environment:
       - "DEBUG=true"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
