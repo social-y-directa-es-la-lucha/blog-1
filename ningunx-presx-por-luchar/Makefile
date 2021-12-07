@@ -1,7 +1,7 @@
 up:
 	make start_dir
-	cd docker && \
-	docker-compose up -d --force-recreate --remove-orphans
+	docker run -u "$(id -u):$(id -g)" -v .:/app --workdir /app balthek/zola:0.14.0 build
+	cd docker && docker-compose up -d --force-recreate --remove-orphans
 
 build:
 	make start_dir
@@ -15,7 +15,7 @@ start_dir:
 	@git pull --force
 
 logs:
-	cd docker && docker-compose logs
+	cd docker && docker-compose logs -f
 
 down:
 	cd docker && \
