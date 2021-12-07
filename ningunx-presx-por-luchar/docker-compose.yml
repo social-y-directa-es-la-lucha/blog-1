@@ -27,7 +27,7 @@ services:
       - STAGING=true
     volumes:
       - ./data:/config
-      - ./public:/config/www
+      - ./public:/config/www:ro
     ports:
       - 443:443
       - 80:80
