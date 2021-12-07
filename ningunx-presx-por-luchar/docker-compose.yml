@@ -25,6 +25,7 @@ services:
       - VALIDATION=http
       - EMAIL=ozerno@protonmail.com
       - STAGING=true
+      - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
       - ./public:/config/www:ro
