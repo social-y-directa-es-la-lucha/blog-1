@@ -24,6 +24,7 @@ services:
       - SUBDOMAINS=www
       - VALIDATION=http
       - EMAIL=ozerno@protonmail.com
+      - STAGING=true
     volumes:
       - ./data:/config
       - ./public:/config/www
