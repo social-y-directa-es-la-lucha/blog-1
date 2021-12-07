@@ -17,7 +17,7 @@ services:
       - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
-      - ./public/web:/config/www
+      - ./public:/config/www
       - ~/.secrets/certbot:/config/dns-conf
     ports:
       - 443:443

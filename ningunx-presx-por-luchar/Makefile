@@ -1,6 +1,6 @@
 up:
 	make start_dir
-	sudo sh build
+	sh build
 	cd docker && docker-compose up -d --force-recreate --remove-orphans
 
 build:
