@@ -1,1 +1,1 @@
-docker run -u "$(id -u):$(id -g)" -v "$(pwd)/web:/public" --workdir /public balthek/zola:0.14.0 build
+docker run -v "$(pwd)/web:/public" --workdir /public balthek/zola:0.14.0 build
