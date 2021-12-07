@@ -7,7 +7,7 @@ services:
     privileged: true
     volumes:
       - .:/site:rw
-      - public_files:/volume:rw
+      - ./data:/volume:rw
 
   swag:
     depends_on:
@@ -24,21 +24,8 @@ services:
       - SUBDOMAINS=www
       - VALIDATION=http
     volumes:
-      - public_files:/config
+      - ./data:/config
     ports:
       - 443:443
       - 80:80
     restart: unless-stopped
-
-networks:
-  cert_net:
-    driver: bridge
-  proxy_net:
-    driver: bridge
-
-volumes:
-  public_files:
-  acme:
-  certs:
-  vhost:
-  html:
