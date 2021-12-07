@@ -1,12 +1,11 @@
 up:
 	make start_dir
-	sh build
-	cd docker && docker-compose up -d --force-recreate --remove-orphans
+	make build
+	docker-compose up -d --force-recreate --remove-orphans
+	make logs
 
 build:
-	make start_dir
-	cd docker && \
-	docker-compose build
+	sh build
 
 serve:
 	zola serve
@@ -15,9 +14,8 @@ start_dir:
 	@git pull --force
 
 logs:
-	cd docker && docker-compose logs -f
+	docker-compose logs -f
 
 down:
-	cd docker && \
 	docker-compose down
 	docker system prune -a
