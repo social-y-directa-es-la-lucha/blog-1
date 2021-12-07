@@ -1,6 +1,6 @@
 up:
 	make start_dir
-	docker run -v ".:/app" --workdir /app balthek/zola:0.14.0 build
+	sudo sh build
 	cd docker && docker-compose up -d --force-recreate --remove-orphans
 
 build:
