@@ -1,6 +1,6 @@
 up:
 	make start_dir
-	docker run -u "$(id -u):$(id -g)" -v .:/app --workdir /app balthek/zola:0.14.0 build
+	docker run -u "$(id -u):$(id -g)" -v $(pwd):/app --workdir /app balthek/zola:0.14.0 build
 	cd docker && docker-compose up -d --force-recreate --remove-orphans
 
 build:

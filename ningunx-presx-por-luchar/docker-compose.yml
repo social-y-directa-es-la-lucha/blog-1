@@ -1,8 +1,6 @@
 version: "3"
 services:
   swag:
-    depends_on:
-      - zola
     image: ghcr.io/linuxserver/swag
     container_name: swag
     cap_add:
