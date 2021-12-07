@@ -9,8 +9,6 @@ services:
       - .:/site:rw
       - public_files:/volume:rw
   nginx-proxy:
-    depends_on:
-      - "zola"
     image: jwilder/nginx-proxy
     container_name: proxy
     ports:
