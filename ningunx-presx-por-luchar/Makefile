@@ -1,12 +1,9 @@
 up:
 	make start_dir
 	docker-compose up -d --force-recreate --remove-orphans
-	make build
+	sh build
 	docker-compose restart
 	make logs
-
-build:
-	sh build
 
 serve:
 	zola serve
