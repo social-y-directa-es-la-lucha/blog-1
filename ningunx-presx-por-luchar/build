@@ -1,4 +1,6 @@
 docker-compose up -d
 PWD=$(pwd); docker run -u "$(id -u):$(id -g)" -v "$PWD:/app" --workdir /app balthek/zola:0.14.0 build
-docker-compose restart
+sudo chown -R abc: $PWD/public
+docker exec swag "nginx -s reload"
 docker-compose logs -f
+#ssh root@box1 "command1; command2; command3"
