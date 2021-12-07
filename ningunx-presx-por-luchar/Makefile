@@ -1,7 +1,8 @@
 up:
 	make start_dir
-	make build
 	docker-compose up -d --force-recreate --remove-orphans
+	make build
+	docker-compose restart
 	make logs
 
 build:
