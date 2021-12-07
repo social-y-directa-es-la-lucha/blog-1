@@ -7,7 +7,7 @@ services:
     privileged: true
     volumes:
       - .:/site:rw
-      - ./public/www:/www:rw
+      - public_files:/www:rw
 
   swag:
     depends_on:
@@ -27,8 +27,11 @@ services:
       - CERTPROVIDER=zerossl
     volumes:
       - ./data:/config
-      - ./public/www:/config/www:rw
+      - public_files:/config/www:rw
     ports:
       - 443:443
       - 80:80
     restart: unless-stopped
+
+volumes:
+  public_files:
