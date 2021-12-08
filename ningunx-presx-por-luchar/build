@@ -12,7 +12,8 @@ if [ -f "$FILE" ]; then
     echo "$FILE exists. Running containers"
 else 
     echo "$FILE does not exist. Create one before attempting to up"
+    exit 1
 fi
 docker network create proxy 2>/dev/null || echo "Network created."
-docker-compose up -d -f deployment/blog.yaml
-docker-compose up -d -f deployment/traefik.yaml
+docker-compose up -f deployment/blog.yaml -d 
+docker-compose up -f deployment/traefik.yaml -d 
