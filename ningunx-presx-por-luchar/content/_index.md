@@ -2,6 +2,8 @@
 title = "¡Ningunx presx por luchar!"
 +++
 
-## Los constantes atropellos policiales bancados por las instituciones dan caras
-## asdasdasdasdasd
-## sadasdasdasdsas
+Los recientes atropellos policiales bancados por instituciones cómplices 
+dejan ver una cara no olvidada del facismo de esta región.
+Los actos de censura 
+La censura, la persecución política de lxs trabajadorxs sindicalizadxs  
+La dictadura nunca terminó.
