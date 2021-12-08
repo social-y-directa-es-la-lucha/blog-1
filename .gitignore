@@ -27,6 +27,7 @@ Dockerfile
 .idea/**/gradle.xml
 .idea/**/libraries
 
+ningunx-presx-por-luchar/public
 # No subir certs
 
 # Gradle and Maven with auto-import
