@@ -14,8 +14,6 @@ else
     echo "$FILE does not exist. Create one before attempting to up"
     exit 1
 fi
-docker-compose -f deployment/traefik.yaml down -d 
-docker-compose -f deployment/blog.yaml down -d 
 docker network create proxy 2>/dev/null || echo "Network created."
-docker-compose -f deployment/traefik.yaml up -d 
-docker-compose -f deployment/blog.yaml up -d 
+docker-compose -f deployment/traefik.yaml up -d --force-recreate
+docker-compose -f deployment/blog.yaml up -d --force-recreate
