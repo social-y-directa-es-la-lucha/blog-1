@@ -1,0 +1,27 @@
+version: '3'
+                                                                   
+services:
+  whoami:
+    # A container that exposes an API to show its IP address
+    image: traefik/whoami
+    environment:
+      - YOURDOMAIN  # assign here or in .env
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "proxy"
+      traefik.http.middlewares.whoami-https-redirect.redirectscheme.scheme: "https"
+      traefik.http.routers.whoami-https.entrypoints: "https"
+      traefik.http.routers.whoami-https.rule: "Host(`ip.${YOURDOMAIN}`)"
+      traefik.http.routers.whoami-https.service: "whoami"
+      traefik.http.routers.whoami-https.tls: "true"
+      traefik.http.routers.whoami-https.tls.certresolver: "myresolver"
+      traefik.http.routers.whoami.entrypoints: "http"
+      traefik.http.routers.whoami.middlewares: "whoami-https-redirect"
+      traefik.http.routers.whoami.rule: "Host(`ip.${YOURDOMAIN}`)"
+      traefik.http.services.whoami.loadbalancer.server.port: "80"  # Set to container's web port
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
