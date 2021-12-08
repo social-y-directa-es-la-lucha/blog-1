@@ -13,9 +13,9 @@ highlight_code = true
 [extra]
 navbar_items = [
     { code = "es", nav_items = [
-        { url = "/", name = "Inicio" },
-        { url = "posts", name = "Publicaciones" },
-        { url = "tags", name = "Etiquetas" },
+        { url = "$BASE_URL/", name = "Inicio" },
+        { url = "$BASE_URL/posts", name = "Publicaciones" },
+        { url = "$BASE_URL/tags", name = "Etiquetas" },
     ] },
 ]
 
