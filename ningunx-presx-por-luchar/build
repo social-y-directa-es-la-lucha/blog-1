@@ -15,5 +15,5 @@ else
     exit 1
 fi
 docker network create proxy 2>/dev/null || echo "Network created."
-docker-compose up -f deployment/blog.yaml -d 
-docker-compose up -f deployment/traefik.yaml -d 
+docker-compose -f deployment/blog.yaml up -d 
+docker-compose -f deployment/traefik.yaml up -d 
