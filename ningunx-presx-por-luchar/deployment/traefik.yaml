@@ -12,7 +12,7 @@ services:
       - "--entrypoints.http.address=:80"
       - "--entrypoints.https.address=:443"
       - "--certificatesresolvers.myresolver.acme.email=${LE_EMAIL}"
-      - "--certificatesresolvers.myresolver.acme.dnschallenge.provider=namecheap"
+      - "--certificatesresolvers.myresolver.acme.dnschallenge.provider=digitalocean"
       - "--certificatesResolvers.myresolver.acme.storage=/certs/acme.json"
       - "--certificatesResolvers.myresolver.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory" # when testing
     ports:
