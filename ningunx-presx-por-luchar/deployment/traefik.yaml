@@ -14,9 +14,7 @@ services:
       - "--certificatesresolvers.myresolver.acme.email=${LE_EMAIL}"
       - "--certificatesresolvers.myresolver.acme.dnschallenge.provider=namecheap"
       - "--certificatesResolvers.myresolver.acme.storage=/certs/acme.json"
-      # To avoid rate limits https://letsencrypt.org/docs/rate-limits/
-      # when testing it is recommended to use the staging server (issues an invalid cert, but works for testing)
-       - "--certificatesResolvers.myresolver.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesResolvers.myresolver.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory" # when testing
     ports:
       - "80:80"      # The HTTP port for internal or http to https redirection
       - "443:443"    # HTTPS traffic
