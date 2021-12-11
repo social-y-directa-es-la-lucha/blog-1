@@ -1,4 +1,4 @@
-base_url = "https://ningunx-presx-por-luchar.info"
+base_url = "https://www.ningunx-presx-por-luchar.info"
 compile_sass = true
 build_search_index = false
 title="Coordinación Antirepresiva y por las Libertades"
@@ -20,9 +20,6 @@ navbar_items = [
 ]
 
 [extra.favicon]
-favicon_16x16 = "/icons/favicon-16x16.png"
-favicon_32x32 = "/icons/favicon-32x32.png"
-apple_touch_icon = "/icons/apple-touch-icon.png"
 safari_pinned_tab = "/icons/safari-pinned-tab.svg"
 webmanifest = "/icons/site.webmanifest"
 
