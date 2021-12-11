@@ -1,5 +1,4 @@
 docker-compose up -d --force-recreate
-PWD=$(pwd); docker run -u -v "$PWD/www:/app" --workdir /app balthek/zola:0.14.0 build
-mv $PWD/www/* ./public/
+PWD=$(pwd); docker run -v "$PWD:/app" --workdir /app balthek/zola:0.14.0 build
 docker exec swag "nginx -s reload"
 docker-compose logs -f
