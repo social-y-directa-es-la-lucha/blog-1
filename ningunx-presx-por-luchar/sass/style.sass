@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 $red: rgb(192, 19, 0);
+$white: hsl(0, 0%, 100%)
 $family-sans-serif: "Jost", sans-serif;
 $footer-padding: 1.0rem 2.5rem;
 $title-family: "Permanent Marker", sans-serif;
@@ -19,9 +20,12 @@ body
     flex-direction: column;
     min-height: 100vh;
  
-#navButton:hover
+.navButton
+    color: $white !important;
+    
+.navButton:hover
     color: #000000 !important;
-#navButton:focus
+.navButton:focus
     color: #000000 !important;
     
 

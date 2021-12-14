@@ -33,7 +33,7 @@
         <nav aria-label="section navigation" class="navbar has-background-black" role="navigation">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">
+                    <a class="navbar-item is-size-5" href="{{config.base_url}}">
                         <div>
                             <figure class="image">
                                 <img src="{{config.base_url}}/images/icon.jfif">
@@ -48,10 +48,10 @@
                 <div class="navbar-menu">
                     <div class="navbar-start">
                     </div>
-                    <div class="navbar-end has-text-centered">
+                    <div class="navbar-end is-dark has-text-centered">
                         {% for item in config.extra.navbar_items %}
                         {% for nav in item.nav_items %}
-                        <a id="navButton" class="navbar-item has-text-white"
+                        <a class="navbar-item has-text-white navButton"
                             href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
                             {{ nav.name }}
                         </a>
@@ -105,6 +105,7 @@
             $(".navbar-burger").click(function () {
                 $(".navbar-burger").toggleClass("is-active");
                 $(".navbar-menu").toggleClass("is-active");
+                //$(".navButton").toggleClass("navButton");
             });
         });
     </script>
