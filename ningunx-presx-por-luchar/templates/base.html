@@ -38,8 +38,13 @@
                                 <img src="{{config.base_url}}/images/icon.jfif">
                             </figure>
                         </div>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
                 </div>
-                <div class="navbar-menu" id="navMenu">
+                <div class="navbar-menu">
                     <div class="navbar-end has-text-centered">
                         {% for item in config.extra.navbar_items %}
                         {% for nav in item.nav_items %}
@@ -49,11 +54,6 @@
                         </a>
                         {% endfor %}
                         {% endfor %}
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                          </a>
                     </div>
                 </div>
         </nav>
