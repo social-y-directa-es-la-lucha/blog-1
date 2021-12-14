@@ -46,12 +46,13 @@
                 <img class="is-rounded" src="images/main.JPG" style="max-width: 192px" />
             </figure>
         </div>
-        <form class="box ">
+        <form class="box" id="target">
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
                     <input class="input is-danger" type="email" placeholder="ej. juan@hotmail.com">
                 </div>
+                <label id="alertLabel" class="label"></label>
             </div>
             <button class="button is-danger">Suscribirse</button>
         </form>
@@ -86,3 +87,22 @@
     </div>
 </div>
 {% endblock %}
+
+{% block custom_js %}
+$("#target").submit(function (event) {
+    if (validateEmail($("input").first().val())) {
+        return;
+    }
+    $("#alertLabel").text("¡Inválido!").show().fadeOut(1000);
+    event.preventDefault();
+});
+
+function validateEmail(emailID) {
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || (dotpos - atpos < 2)) {
+        return false;
+    }
+    return (true);
+}
+{% block custom_js %}
