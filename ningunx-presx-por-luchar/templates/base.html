@@ -46,6 +46,8 @@
                         </a>
                 </div>
                 <div class="navbar-menu">
+                    <div class="navbar-start">
+                    </div>
                     <div class="navbar-end has-text-centered">
                         {% for item in config.extra.navbar_items %}
                         {% for nav in item.nav_items %}
@@ -99,12 +101,12 @@
     {% block custom_js %}
     {% endblock %}
     <script>
-        function documentReadyCallback() {
-            document.querySelector(".navbar-burger").addEventListener("click", () => {
-                document.querySelector(".navbar-burger").classList.toggle("is-active");
-                document.querySelector(".navbar-menu").classList.toggle("is-active");
+        $(document).ready(function () {
+            $(".navbar-burger").click(function () {
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
             });
-        }
+        });
     </script>
 </body>
 
