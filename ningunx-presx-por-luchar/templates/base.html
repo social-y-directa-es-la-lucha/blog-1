@@ -44,7 +44,7 @@
                     <div class="navbar-end has-text-centered">
                         {% for item in config.extra.navbar_items %}
                         {% for nav in item.nav_items %}
-                        <a class="navbar-item has-text-light"
+                        <a class="navbar-item"
                             href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
                             {{ nav.name }}
                         </a>
