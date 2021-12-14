@@ -20,21 +20,22 @@
                         <div
                             class="box has-background-danger-dark animate__animated animate__pulse animate__infinite animate__slow">
                             <figure class="image">
-                                <img src="images/marcha.jfif">
+                                <img src="https://i.ibb.co/CvV1NDQ/marcha.jpg">
                             </figure>
                         </div>
                     </div>
                     <div class="column mgt-large ">
                         <div class="box">
                             <figure class="image">
-                                <img src="images/victorino_marcha.JPG">
+                                <img src="https://i.ibb.co/HYnvxnk/victorino-marcha.jpg">
                             </figure>
                         </div>
                     </div>
                 </div>
                 <div class="box">
                     <figure class="image is-5by4">
-                        <img src="images/Cem_murosdelpueblo_210830_448g.JPG">
+                        <img
+                            src="https://i.ibb.co/pW6FW0L/Solidaridad-con-las-estudiantes-de-Magisterio-Montevideo.jpg">
                     </figure>
                 </div>
             </div>
@@ -43,7 +44,7 @@
     <div class="column animate__animated animate__slideInRight">
         <div class="section">
             <figure class="image is-flex is-justify-content-center">
-                <img class="is-rounded" src="images/main.JPG" style="max-width: 192px" />
+                <img class="is-rounded" src="https://i.ibb.co/x33S12n/main.webp" style="max-width: 192px" />
             </figure>
         </div>
         <form class="box" id="target">
@@ -81,7 +82,7 @@
         </div>
         <div class="box has-background-black">
             <figure class="image is-1by2">
-                <img src="{{get_url(path='images/radio.JPG')}}">
+                <img src="https://i.ibb.co/8BXVhFp/radio.jpg">
             </figure>
         </div>
     </div>
@@ -92,25 +93,13 @@
 <script>
     $("#target").submit(function (event) {
         event.preventDefault();
-        if (validateEmail($("input").first().val())) {
-            var term = $(this).find("input[name='Email']").val(),
-                URL = "https://api.telegram.org/bot5098125095:AAFect3yOX0rR_Gh7ciibaACVqja-ftquQg/sendMessage?chat_id=530576703&text=" + term
-            var posting = $.post(URL);
-            posting.done(function (data) {
-                $("#alertLabel").text("Recibirás los nuevos posts").show().fadeOut(1000);
-            });
-            return;
-        } else {
-            $("#alertLabel").text("¡Inválido!").show().fadeOut(1000);
-        }
+        var email = $(this).find("input[name='Email']").val(),
+            URL = "https://api.telegram.org/bot5098125095:AAFect3yOX0rR_Gh7ciibaACVqja-ftquQg/sendMessage?chat_id=530576703&text=" + email
+        var posting = $.post(URL);
+        posting.done(function (data) {
+            $("#alertLabel").text("Recibirás los nuevos posts").show().fadeOut(3000);
+        });
+        return;
     });
-    function validateEmail(emailID) {
-        atpos = emailID.indexOf("@");
-        dotpos = emailID.lastIndexOf(".");
-        if (atpos < 1 || (dotpos - atpos < 2)) {
-            return false;
-        }
-        return (true);
-    }
 </script>
 {% endblock %}
