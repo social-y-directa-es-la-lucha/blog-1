@@ -16,6 +16,7 @@
     <link href='/icons/apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
     <link href="{{ get_url(path='style.css') | safe }}" rel="stylesheet" type="text/css" />
+    <link href="{{ get_url(path='style.css') | safe }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
         integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
@@ -97,6 +98,14 @@
     </footer>
     {% block custom_js %}
     {% endblock %}
+    <script>
+        function documentReadyCallback() {
+            document.querySelector(".navbar-burger").addEventListener("click", () => {
+                document.querySelector(".navbar-burger").classList.toggle("is-active");
+                document.querySelector(".navbar-menu").classList.toggle("is-active");
+            });
+        }
+    </script>
 </body>
 
 </html>
