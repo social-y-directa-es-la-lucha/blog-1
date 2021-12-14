@@ -1,3 +1,8 @@
+# .env
+# DO_AUTH_TOKEN=
+# YOURDOMAIN=
+# LE_EMAIL=
+
 version: "3"
 services:
   swag:
