@@ -1,30 +1,23 @@
 +++
-title="Qué pasó con Radio Alternativa? #Volante"
+title="La primera feria del Libro anarquista de Montevideo y del mundo?"
 date=2021-11-28
 
 [taxonomies]
-tags = ["Radio Alternativa", "Censura", "Violencia Institucional"]
+tags = ["Feria", "Histórico"]
 +++
 
 Extraído del volante que se difundió desde la coordinación en solidaridad con la
 Radio Alternativa FM 105.5 de Nuevo París
 
 <!-- more -->
-![Imagen1](../img1.jpg)
+Las Ferias del Libro Anarquistas se han popularizado a lo largo y ancho del planeta en los últimos años. Las mismas son una muestra de la constante y prolifera actividad cultural e ideológica del movimiento, expresada tanto en la continua edición de materiales (libros, revistas, etc) como su difusión y discusión en las charlas, exposiciones y controversias que en las mismas se realizan.
 
-# MENSAJES DE ODIO TE DIJERON Y TE DIJERON MAL
+En Montevideo se han realizado 8 ferias del libro anarquista, las cinco primeras transcurrieron entre los años 2012 y 2016 en el local del Centro Social Autónomo La Solidaria desalojado en 2017. Las siguientes se realizaron en el Centro Social Cordón Norte los años siguientes, contando con una importante afluencia de publico de diversas regiones del continente y el mundo.
+Si bien se considera el comienzo de estas instancias la realizada en Londres en 1983, encontramos en Montevideo un origen anterior cuando el 29 de abril de 1944 se inauguró el “Primer Salón del libro anarquista”, que si bien varía en el titulo del evento el formato es exactamente igual.
+La actividad consistía en la exposición de casi mil libros anarquistas de diversos autores y temáticas
+(ver listado aquí: http://ateneuenciclopedicpopular.org/wp-content/uploads/2021/01/primer-salon-del-libro-anarquista-abril-1944.pdf ) y la realización de instancias de discusión sobre “los problemas fundamentales de nuestras ideas a través de disertadores con tribuna libre” todos los sábados del mes de mayo y junio a las 22.30 hs en el local de “La Casa de los Libertarios” ubicado en Yaguarón y Mercedes.
 
-Una vez más la prepotencia policial se presenta intentando amedrentar y deslegitimar la organización social. La presidenta del sindicato policial (SIFPOM - PIT-CNT) arremetió contra Alternativa FM denunciando al medio por supuestos mensajes de odio.
+La Casa de los Libertarios se había fundado en octubre de 1943 y se proponía en su declaración de principios: “Sostener el principio de libertad como elemento esencial para el desarrollo integral del hombre y para una más armoniosa relación social; por ende considera el sistema de gobierno del hombre por el hombre, igual que la actividad política tendiente al mismo, como propósitos negadores de ese principio. (…) Desarrollar y practicar la acción directa como táctica de lucha para poder construir los valores humanos imprescindibles para una sociedad sin opresores ni oprimidos; sin explotados ni explotadores.”
 
-Alternativa FM es una radio comunitaria que transmite en el oeste de Montevideo desde el año 1995. Desde el comienzo la radio realiza trabajos con diferentes organizaciones barriales e instituciones, Portal Amarillo, Socat de Nuevo París, Liceos de la zona, clubes de baby fútbol, cooperativas de viviendas por ayuda mutua, vecinxs y afines.
-Esta denuncia se enmarca en un contexto de crisis y limitación de las libertades, en una sociedad cada vez más precarizada, con un crecimiento exponencial de la pobreza, aumento de las bocas de venta de droga y la única solución que se propone desde el Estado es la represión sistemática a lxs más vulneradxs y explotadxs.
-
-Distintos gobiernos han intentado lavarle la cara a las “fuerzas del orden”, pero en esencia siguen siendo las mismas que no reconocen en su haber desapariciones, torturas, asesinatos y secuestro de niñes en dictadura. Son las mismas que mantienen entre sus mandos a personas responsables de masacres como la del Filtro. Son las que tampoco se hacen cargo de los asesinatos por la espalda en los barrios como el de Sergio Lemos o los del Marconi en 2012 y 2016. Son aquellas que no reconocen los asesinatos en los calabozos de las comisarias como las de Pablo Pereyra en Lagomar o la reciente de Victorino en Colonia.
-
-# ¡TOCAN A UNX RESPONDEMOS TODXS!
-
-Por todo esto es que hacemos un llamado a luchar por la libertad de expresión y a la solidaridad entre lxs de abajo para hacer frente al patoterismo institucional.
-
-# ¡SOLIDARIDAD CON ALTERNATIVA FM!
-
-![Imagen2](../images/img1.jpg)
+Como se ve la práctica regenerativa y de acción directa anarquista ha sido una constante en nuestra región, la cual impulsó las primeras asociaciones obreras, asociaciones cooperativas y las primeras luchas revolucionarias contra el Estado y su consolidación capitalista, y son los mismos principios y pautas de acción que orientan hoy las diversas luchas autónomas que priorizan la autoorganización social y la acción directa despreciando los callejones sin salida de la institucionalidad democrática que tan solo pretende dar pequeñas concesiones para asegurar que los problemas estructurales no cambien.
+Hoy, al igual que lxs compañerxs de La Casa de Lxs Libertarixs apostamos a “desarrollar y practicar la acción directa como táctica de lucha para poder construir los valores humanos imprescindibles para una sociedad sin opresores ni oprimidos; sin explotados ni explotadores.”
