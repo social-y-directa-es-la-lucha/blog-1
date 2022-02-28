@@ -10,7 +10,7 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.13.0
         env:
           PAGES_BRANCH: gh-pages
-          BUILD_DIR: ningunx-presx-por-luchar
+          BUILD_DIR: feria-a-montevideo
           TOKEN: ${{ secrets.TOKEN }}
           # BUILD_ONLY: true
           BUILD_FLAGS: "--base-url https://social-y-directa-es-la-lucha.github.io/blog-1/"
