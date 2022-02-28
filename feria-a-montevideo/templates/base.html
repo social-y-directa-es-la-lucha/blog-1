@@ -34,9 +34,9 @@
                 <div class="navbar-brand">
                     <a class="navbar-item is-size-5" href="{{config.base_url}}">
                         <div>
-                            <figure class="image">
-                                <img src="{{config.base_url}}/images/icon2.png">
-                            </figure>
+                            <!--                            <figure class="image">-->
+                            <!--                                <img src="{{config.base_url}}/images/icon2.png">-->
+                            <!--                            </figure>-->
                         </div>
                         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                             <span aria-hidden="true"></span>
@@ -60,9 +60,11 @@
                 </div>
         </nav>
     </div>
-    {% block content %}
-    {% endblock %}
-    <footer class="footer py-4">
+    <div id="bodyContent">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer class="footer py-4 myFooter">
         <div class="content has-text-right">
             <div class="content">
                 <span class="icon-text mlt-6">

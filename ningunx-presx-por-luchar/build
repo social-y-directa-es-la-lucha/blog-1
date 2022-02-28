@@ -1,4 +1,0 @@
-git pull
-PWD=$(pwd); docker run -v "$PWD:/app" --workdir /app balthek/zola:0.14.0 build
-docker-compose up -d --force-recreate
-docker-compose logs -f
