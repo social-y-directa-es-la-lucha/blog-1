@@ -1,0 +1,41 @@
+{% macro page_publish_metadata(page) %}
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="{{ page.date }}">{{ page.date | date(format='%d | %m | %Y') }}</time></span>
+</span>
+{% endmacro %}
+
+{% macro page_content_metadata(page) %}
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>{{ page.reading_time }} min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>{{ page.word_count }} palabras</span>
+</span>
+{% endmacro %}
+
+{% macro render_tags(tags) %}
+<p>
+  <span><b>Etiquetas:</b> <br></span>
+<ol type="I">
+  {% for tag in tags %}
+  <a class="has-text-info-dark has-text-weight-semibold" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">
+    <li>
+      <span class="icon-text">
+        <span class="icon">
+          <i class="fas fa-tag"></i>
+        </span>
+        <span>{{tag}}</span>
+      </span>
+    </li>
+  </a>
+  {% endfor %}
+</ol>
+</p>
+{% endmacro %}

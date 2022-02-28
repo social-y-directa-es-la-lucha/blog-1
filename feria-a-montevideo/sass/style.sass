@@ -1,0 +1,35 @@
+@charset "utf-8"
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap')
+@import 'media.scss'
+@import 'akkurat.scss'
+
+
+$red: rgba(229,31,136,255)
+$white: hsl(0, 0%, 100%)
+$black: hsl(0, 0%, 4%)
+$family-sans-serif: "Akkurat Pro", sans-serif
+$footer-padding: 1.0rem 2.5rem
+$title-family: "Akkurat Pro Bold", sans-serif
+$title-color: $red
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: $family-sans-serif
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+#navButton:focus, #navButton:hover
+    color: #000000 !important
+
+#navButton
+    @include lt-lg
+        color: $black !important
+
+
+
+@import '../bulma/bulma'

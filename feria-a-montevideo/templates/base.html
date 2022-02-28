@@ -1,0 +1,102 @@
+{% import 'macros.html' as macros %}
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        {% block title %}
+        {{ config.title }}
+        {% endblock title %}
+    </title>
+    <link href='/icons/favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+    <link href='/icons/favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+    <link href='/icons/apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+    <link href="{{ get_url(path='style.css') | safe }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js"
+        integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js"
+        integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY"
+        crossorigin="anonymous"></script>
+
+<body>
+    <div class="animate__animated animate__slideInDown">
+        <nav aria-label="section navigation" class="navbar has-background-black" role="navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item is-size-5" href="{{config.base_url}}">
+                        <div>
+                            <figure class="image">
+                                <img src="{{config.base_url}}/images/icon2.png">
+                            </figure>
+                        </div>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start">
+                    </div>
+                    <div class="navbar-end is-dark has-text-centered">
+                        {% for item in config.extra.navbar_items %}
+                        {% for nav in item.nav_items %}
+                        <a id="navButton" class="navbar-item has-text-white"
+                            href="{{ nav.url | replace(from='$BASE_URL', to=config.base_url) }}">
+                            {{ nav.name }}
+                        </a>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+        </nav>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer py-4">
+        <div class="content has-text-right">
+            <div class="content">
+                <span class="icon-text mlt-6">
+                    <span>
+                        <strong>TRANSFORMA LA INDIGNACIÓN EN LUCHA Y RESISTENCIA</strong>
+                        <span class="icon animate__animated animate__headShake animate__infinite">
+                            <i class="fas fa-bomb fa-2x"></i>
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <span class="icon-text">
+                <span>
+                    <a href="https://github.com/social-y-directa-es-la-lucha/blog-1.git">
+                        Código libre</span></a>
+                <span class="icon">
+                    <i class="fas fa-code"></i>
+                </span>
+            </span>
+        </div>
+    </footer>
+    {% block custom_js %}
+    {% endblock %}
+    <script>
+        $(document).ready(function () {
+            $(".navbar-burger").click(function () {
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+                $("#navButton").each(function () {
+                    $(this).css('color', '#000000');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
