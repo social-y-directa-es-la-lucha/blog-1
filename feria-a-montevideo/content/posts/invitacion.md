@@ -13,9 +13,11 @@ Estamos muy contentxs de proponer un encuentro en el que se potencie y profundic
 
 Con entusiasmo también anunciamos que está abierta la posibilidad a la participación de editoriales y puestos de difusión de material de carácter anarquista y antiautoritario. En este sentido, pedimos a lxs compañerxs y colectivos que tengan en consideración que los puestos sean exclusivamente de difusión de libros, revistas y publicaciones de ideas anarquistas y antiautoritarias.
 
-Por más info: 
-Blog: [Página Web](https://www.feria-anarquista-montevideo.info)
-Email: [Email](mailto::feriaanarquistamvd@riseup.net)
+Por más info:  
+  
+- [https://www.feria-anarquista-montevideo.info](https://www.feria-anarquista-montevideo.info)
+- feriaanarquistamvd@riseup.net → [Enviar mail](mailto::feriaanarquistamvd@riseup.net)  
+- [Enviar mail](mailto::feriaanarquistamvd@riseup.net)  
 
-¡Contra toda autoridad!
+¡Contra toda autoridad!  
 ¡Qué viva la Anarquía! 
