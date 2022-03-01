@@ -8,14 +8,14 @@ tags = ["Feria", "Histórico"]
 
 <!-- more -->
 
-![zola](images/primeraFeria.jpg)
-
 Las Ferias del Libro Anarquistas se han popularizado a lo largo y ancho del planeta en los últimos años. Las mismas son una muestra de la constante y prolifera actividad cultural e ideológica del movimiento, expresada tanto en la continua edición de materiales (libros, revistas, etc) como su difusión y discusión en las charlas, exposiciones y controversias que en las mismas se realizan.
 
 En Montevideo se han realizado 8 ferias del libro anarquista, las cinco primeras transcurrieron entre los años 2012 y 2016 en el local del Centro Social Autónomo La Solidaria desalojado en 2017. Las siguientes se realizaron en el Centro Social Cordón Norte los años siguientes, contando con una importante afluencia de publico de diversas regiones del continente y el mundo.
 Si bien se considera el comienzo de estas instancias la realizada en Londres en 1983, encontramos en Montevideo un origen anterior cuando el 29 de abril de 1944 se inauguró el “Primer Salón del libro anarquista”, que si bien varía en el titulo del evento el formato es exactamente igual.
 La actividad consistía en la exposición de casi mil libros anarquistas de diversos autores y temáticas
 (ver listado aquí: http://ateneuenciclopedicpopular.org/wp-content/uploads/2021/01/primer-salon-del-libro-anarquista-abril-1944.pdf ) y la realización de instancias de discusión sobre “los problemas fundamentales de nuestras ideas a través de disertadores con tribuna libre” todos los sábados del mes de mayo y junio a las 22.30 hs en el local de “La Casa de los Libertarios” ubicado en Yaguarón y Mercedes.
+
+![zola](images/primeraFeria.jpg)
 
 La Casa de los Libertarios se había fundado en octubre de 1943 y se proponía en su declaración de principios: “Sostener el principio de libertad como elemento esencial para el desarrollo integral del hombre y para una más armoniosa relación social; por ende considera el sistema de gobierno del hombre por el hombre, igual que la actividad política tendiente al mismo, como propósitos negadores de ese principio. (…) Desarrollar y practicar la acción directa como táctica de lucha para poder construir los valores humanos imprescindibles para una sociedad sin opresores ni oprimidos; sin explotados ni explotadores.”
 
