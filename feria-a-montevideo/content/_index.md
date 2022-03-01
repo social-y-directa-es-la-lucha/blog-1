@@ -1,5 +1,5 @@
 +++
-title = "9° Feria del Libro Anarquista 🏴📖"
+title = ""
 +++
 
 Un encuentro en el que se potencie y profundice sobre la lucha incesante contra el Estado, el patriarcado, el capital y contra todo lo que intenta dominarnos.   
