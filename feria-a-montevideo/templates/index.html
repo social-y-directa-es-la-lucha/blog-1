@@ -89,6 +89,7 @@
         var posting = $.post(URL);
         posting.done(function (data) {
             $("#alertLabel").text("Recibirás los nuevos posts").show().fadeOut(3000);
+            $(this).find("input[name='Email']").val = ""
         });
         return;
     });
