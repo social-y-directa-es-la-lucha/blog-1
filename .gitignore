@@ -29,7 +29,8 @@ Dockerfile
 
 ningunx-presx-por-luchar/.*
 ningunx-presx-por-luchar/public
-
+feria-a-montevideo/.*
+feria-a-montevideo/public
 # No subir certs
 
 # Gradle and Maven with auto-import
