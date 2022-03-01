@@ -17,7 +17,7 @@ Por más info:
   
 - [https://www.feria-anarquista-montevideo.info](https://www.feria-anarquista-montevideo.info)
 - feriaanarquistamvd@riseup.net → [Enviar mail](mailto::feriaanarquistamvd@riseup.net)  
-- [Enviar mail](mailto::feriaanarquistamvd@riseup.net)  
+- [Redes Sociales](https://www.facebook.com/feriaanarquistamvd)  
 
 ¡Contra toda autoridad!  
 ¡Qué viva la Anarquía! 
