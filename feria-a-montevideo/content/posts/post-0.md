@@ -8,7 +8,7 @@ tags = ["Feria", "Histórico"]
 
 <!-- more -->
 
-{{ resize_image(path="images/primeraFeria.jpg", width=300, height=300, op="scale") }}
+![zola](images/primeraFeria.jpg)
 
 Las Ferias del Libro Anarquistas se han popularizado a lo largo y ancho del planeta en los últimos años. Las mismas son una muestra de la constante y prolifera actividad cultural e ideológica del movimiento, expresada tanto en la continua edición de materiales (libros, revistas, etc) como su difusión y discusión en las charlas, exposiciones y controversias que en las mismas se realizan.
 
