@@ -6,10 +6,10 @@ date=2022-02-28
 tags = ["Feria", "Histórico"]
 +++
 
-Extraído del volante que se difundió desde la coordinación en solidaridad con la
-Radio Alternativa FM 105.5 de Nuevo París
-
 <!-- more -->
+
+{{ resize_image(path="images/primeraFeria.jpg", width=300, height=300, op="scale") }}
+
 Las Ferias del Libro Anarquistas se han popularizado a lo largo y ancho del planeta en los últimos años. Las mismas son una muestra de la constante y prolifera actividad cultural e ideológica del movimiento, expresada tanto en la continua edición de materiales (libros, revistas, etc) como su difusión y discusión en las charlas, exposiciones y controversias que en las mismas se realizan.
 
 En Montevideo se han realizado 8 ferias del libro anarquista, las cinco primeras transcurrieron entre los años 2012 y 2016 en el local del Centro Social Autónomo La Solidaria desalojado en 2017. Las siguientes se realizaron en el Centro Social Cordón Norte los años siguientes, contando con una importante afluencia de publico de diversas regiones del continente y el mundo.
