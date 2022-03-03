@@ -18,7 +18,7 @@ navbar_items = [
         { url = "$BASE_URL/tags", name = "Etiquetas" },
         { url = "$BASE_URL/ubicacion", name = "Ubicación" },
         { url = "$BASE_URL/crono", name = "Cronograma" },
-        { url = "$BASE_URL/contact", name = "Contacto" }
+        { url = "$BASE_URL/contact.html", name = "Contacto" }
     ] },
 ]
 
