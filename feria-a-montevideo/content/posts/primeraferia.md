@@ -14,7 +14,7 @@ En Montevideo se han realizado 8 ferias del libro anarquista, las cinco primeras
 Si bien se considera el comienzo de estas instancias la realizada en Londres en 1983, encontramos en Montevideo un origen anterior cuando el 29 de abril de 1944 se inauguró el “Primer Salón del libro anarquista”, que si bien varía en el titulo del evento el formato es exactamente igual.
 La actividad consistía en la exposición de casi mil libros anarquistas de diversos autores y temáticas [(Ver acá)](http://ateneuenciclopedicpopular.org/wp-content/uploads/2021/01/primer-salon-del-libro-anarquista-abril-1944.pdf) y la realización de instancias de discusión sobre “los problemas fundamentales de nuestras ideas a través de disertadores con tribuna libre” todos los sábados del mes de mayo y junio a las 22.30 hs en el local de “La Casa de los Libertarios” ubicado en Yaguarón y Mercedes.
 
-![zola](images\primeraferia.jpg)
+[primera_feria](https://i.ibb.co/gPvT455/primeraferia.jpg)
 
 La Casa de los Libertarios se había fundado en octubre de 1943 y se proponía en su declaración de principios: “Sostener el principio de libertad como elemento esencial para el desarrollo integral del hombre y para una más armoniosa relación social; por ende considera el sistema de gobierno del hombre por el hombre, igual que la actividad política tendiente al mismo, como propósitos negadores de ese principio. (…) Desarrollar y practicar la acción directa como táctica de lucha para poder construir los valores humanos imprescindibles para una sociedad sin opresores ni oprimidos; sin explotados ni explotadores.”
 
