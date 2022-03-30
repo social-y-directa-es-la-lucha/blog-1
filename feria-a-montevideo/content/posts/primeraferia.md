@@ -1,6 +1,6 @@
 +++
 title="La primera feria del libro anarquista de Montevideo y del mundo."
-date=2022-03-01
+date=2022-02-28
 
 [taxonomies]
 tags = ["Feria", "Histórico"]
