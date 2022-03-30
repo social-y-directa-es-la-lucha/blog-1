@@ -8,8 +8,6 @@ tags = ["Anarquismo", "Reflexiones"]
 
 <!-- more -->
 
-#Algunas reflexiones sobre anarquismo
-
 Les presentamos estos textos producidos por compañerxs de la organización de la feria, buscando profundizar nuestras
 ideas, acercándonos a definiciones comunes y perpetuando siempre que los anarquistas creemos que sistemas, relaciones, ideas, 
 ideales y actitudes autoritarias como el patriarcado y el sexismo en general; 
