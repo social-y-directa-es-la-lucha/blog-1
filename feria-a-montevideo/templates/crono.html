@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ config.title }} | {{ page.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="section">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    <time datetime="2022-04-22">Viernes | 22 Abril</time>
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            19:00hs | Apertura del evento
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            20:00hs | Presentación de objetivos y marco de la feria
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            20:30hs | Presentación de Charlas
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            21:30hs | Cena
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    <time datetime="2022-04-23">Sábado | 23 Abril</time>
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            15:00hs | Apertura de la feria
+                        </div>
+                    </article>
+                    <article class="message is-danger">
+                        <div btn_id="1" class="message-body">
+                            15:00hs a 17:00hs | Charla: ANTIPATRIARCADO DE TODXS, Una experiencia lúdica para
+                            repensarnos
+                        </div>
+                        <div btn_id="1" class="message-body">
+                            Una experiencia lúdica para repensarnos.
+                            ¿Qué mecanismos patriarcales operan a la hora de vincularnos en nuestros espacios? ¿Qué esfuerzos concretos hacemos por transformarnos y transformar nuestro entorno?
+                            La cultura patriarcal en la que crecemos nos enseña formas concretas de relacionarnos y por eso el anarquismo como práctica colectiva se propone desaprender lo que nos ha sido impuesto. Sabemos que desenraizar nuestras actitudes machistas no es tarea sencilla.
+                            En esta actividad proponemos un juego de mesa como catalizador. Para ponernos en juego desde otros lugares, para mirarnos entre compas y enseñarnos entre nosotrxs formas más propias.
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            17:30hs | Carteo a compañerxs presxs
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            17:30hs a 20:30hs | Taller: Encuadernación
+                        </div>
+                    </article>
+                    <article class="message is-danger">
+                        <div btn_id="2" class="message-body">
+                            19:00hs a 21:00hs | Charla: Territorio vivo, lucha y heterogeneidad: Propuesta de
+                            reflexión colectiva a partir del conflicto en Remanso de Neptunia.
+                        </div>
+                        <div class="message-body">
+                            Tomando como punto de partida la defensa del monte Bilú Atit en el Remanso de Neptunia y la
+                            lucha vecinal en contra de la especulación inmobiliaria que lo pretende destruir, nos
+                            proponemos generar un conjunto de dinámicas que propicien una reflexión colectiva. Una
+                            instancia para analizar los modos de participación anarquista en las luchas territoriales,
+                            el modo en que dicha participación interacciona con la heterogeneidad de la comunidad, los
+                            prejuicios y lugares comunes desde los que se habla sobre "la gente", las estrategias
+                            colectivas, las contradicciones los elementos que nos unen y los procesos de cambio que todo
+                            conflicto territorial va atravesando.
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            23hs | Cierre
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    <time datetime="2022-04-24">Domingo | 24 Abril</time>
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            15:00hs | Apertura de la feria
+                        </div>
+                    </article>
+                    <article btn_id="3" class="message is-danger">
+                        <div class="message-body">
+                            15:00hs a 17:00hs | Charla: Falsa Dicotomía
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            17:30hs a 18:15hs | Presentación de Libro
+                        </div>
+
+                    </article>
+                    <article btn_id="4" class="message is-danger">
+                        <div class="message-body">
+                            18:30hs a 20:30hs | Charla: Proyectos Territoriales
+                        </div>
+                    </article>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            23hs | Cierre
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block custom_js %}
+
+<script>
+        $(document).ready(function () {
+            $(".message").click(function () {
+
+                $('btn_id').click(function(event){
+                    alert(event.target.btn_id);
+                });
+
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+                $("#navButton").each(function () {
+                    $(this).css('color', '#000000');
+                });
+            });
+        });
+
+
+</script>
+{% endblock %}

@@ -17,8 +17,7 @@ navbar_items = [
         { url = "$BASE_URL/posts", name = "Publicaciones" },
         { url = "$BASE_URL/tags", name = "Etiquetas" },
         { url = "$BASE_URL/404.html", name = "Ubicación" },
-        { url = "$BASE_URL/404.html", name = "Cronograma" },
-        { url = "$BASE_URL/404.html", name = "Contacto" }
+        { url = "$BASE_URL/crono", name = "Cronograma" },
     ] },
 ]
 
