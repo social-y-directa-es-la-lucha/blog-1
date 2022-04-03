@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ config.title }} | {{ page.title }}
+{% endblock %}
+
+{% block content %}
+<div class="columns">
+    <div class="box">
+        <div class="gmap_canvas">
+            <iframe width="1080" height="500" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=2218,%20Daniel%20Mu%C3%B1oz,%20Uruguay&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://www.whatismyip-address.com"></a><br>
+            <style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style>
+            <a href="https://www.embedgooglemap.net">google maps websites</a>
+            <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1080px;}</style>
+        </div>
+    </div>
+    <div class="column">
+        <section class="hero is-danger is-medium">
+            <div class="hero-body">
+                <p class="title">
+                    Daniel Muñoz 2218
+                </p>
+                <p class="subtitle">
+                    (Entre Juan Paullier y Cufré) <br><br>
+                    <a href="https://maps.google.com/maps/dir//Daniel+Mu%C3%B1oz+2218+11200+Montevideo,+Departamento+de+Montevideo/@-34.8960824,-56.1692511,17z/data=!4m5!4m4!1m0!1m2!1m1!1s0x959f80527b55b7d1:0x387468a92b08e683">
+                        <i class="fas fa-location-arrow"></i>
+                        Direcciones (Google Maps)
+                    </a>
+                </p>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
