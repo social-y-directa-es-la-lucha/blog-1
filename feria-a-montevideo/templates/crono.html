@@ -51,12 +51,12 @@
                             15:00hs | Apertura de la feria
                         </div>
                     </article>
-                    <article class="message is-danger">
+                    <article class="message has-text">
                         <div btn_id="1" class="message-body">
                             15:00hs a 17:00hs | Charla: ANTIPATRIARCADO DE TODXS, Una experiencia lúdica para
-                            repensarnos
+                            repensarnos.
                         </div>
-                        <div btn_id="1" class="message-body">
+                        <div class="message-body text">
                             Una experiencia lúdica para repensarnos.
                             ¿Qué mecanismos patriarcales operan a la hora de vincularnos en nuestros espacios? ¿Qué
                             esfuerzos concretos hacemos por transformarnos y transformar nuestro entorno?
@@ -72,17 +72,29 @@
                             17:30hs | Carteo a compañerxs presxs
                         </div>
                     </article>
-                    <article class="message is-dark">
+                    <article class="message has-text">
                         <div class="message-body">
-                            17:30hs a 20:30hs | Taller: Encuadernación
+                            17:30hs a 20:30hs | Taller: Producción Editorial
+                        </div>
+                        <div class="message-body text">
+                            Las publicaciones (libros, folletos, periódicos, fanzines), fueron, son y serán parte
+                            fundamental de la propagación de ideas dentro y fuera de los movimientos anarquistas.
+                            Nos proponemos llevar adelante un taller teórico-práctico que recoja la rica historia de la
+                            tarea de publicar, liberaremos técnicas, recursos y conocimientos con el fin de difundir el
+                            gusto por la elaboración de publicaciones. El taller abordará, desde el acceso libre a los
+                            contenidos, la edición de textos, el diseño de las publicaciones, las diferentes formas de
+                            impresión cerrando con el taller de encuadernación.
+                            Nos dividiremos en dos módulos de 90 minutos para poder desarrollar una síntesis de las
+                            diferentes fases y técnicas. Dichos módulos se agrupan en: edición y diseño, e impresión y
+                            encuadernación.
                         </div>
                     </article>
-                    <article class="message is-danger">
-                        <div btn_id="2" class="message-body">
+                    <article class="message has-text">
+                        <div class="message-body">
                             19:00hs a 21:00hs | Charla: Territorio vivo, lucha y heterogeneidad: Propuesta de
                             reflexión colectiva a partir del conflicto en Remanso de Neptunia.
                         </div>
-                        <div class="message-body">
+                        <div class="message-body text">
                             Tomando como punto de partida la defensa del monte Bilú Atit en el Remanso de Neptunia y la
                             lucha vecinal en contra de la especulación inmobiliaria que lo pretende destruir, nos
                             proponemos generar un conjunto de dinámicas que propicien una reflexión colectiva. Una
@@ -119,11 +131,21 @@
                             15:00hs a 17:00hs | Charla: Falsa Dicotomía
                         </div>
                     </article>
-                    <article class="message is-dark">
+                    <article class="message has-text">
                         <div class="message-body">
-                            17:30hs a 18:15hs | Presentación de Libro
+                            17:30hs a 18:15hs | Presentación de Libro "Estafar un banco.. que placer! y otras historias"
+                            de Augusto “Chacho” Andrés
                         </div>
-
+                        <div class="message-body text">
+                            El libro pretende traer a nuestro presente historias y memorias de quienes, a lo largo del
+                            siglo XX, participaron en las luchas por la emancipación social y la libertad. Chacho
+                            entrelaza pequeños relatos de perdedores inclaudicables que, antes que nosotrxs se
+                            enfrentaron al poder y a las injusticias en distintas comarcas.
+                            Intentando circunscribirse en la rica tradición y el quehacer de editoriales anarquistas es
+                            que fue coeditado en ambas márgenes del Río de la Plata. Materializando prácticas y modos de
+                            hacer asociativos, internacionalistas, apoyándose en redes de afinidad, buscando círculos
+                            alternativos y en permanente diálogo horizontal y autogestivo.
+                        </div>
                     </article>
                     <article btn_id="4" class="message is-danger">
                         <div class="message-body">
@@ -147,7 +169,7 @@
             </a>
         </button>
         <button class="button is-large is-danger is-light">
-            <a href='{{ config.base_url }}'>
+            <a href='{{ config.base_url }}/ubicacion'>
           <span class="icon">
               <i class="fas fa-map-marked-alt"></i>
           </span>
@@ -159,27 +181,20 @@
 {% endblock %}
 
 {% block custom_js %}
-
 <script>
         $(document).ready(function () {
-            $(".message").click(function () {
-
-                $('btn_id').click(function(event){
-                    alert(event.target.btn_id);
-                });
-
-                $(".navbar-burger").toggleClass("is-active");
-                $(".navbar-menu").toggleClass("is-active");
-                $("#navButton").each(function () {
-                    $(this).css('color', '#000000');
-                });
+            $(".message.has-text").addClass("is-danger")
+            $(".message-body.text").hide()
+            $(".has-text").click(function () {
+                var t = $(this)
+                if (!t.hasClass("active")) {
+                     t.find(".message-body.text").slideDown()
+                     t.addClass("active")
+                } else {
+                    t.find(".message-body.text").slideUp()
+                    t.removeClass("active")
+                }
             });
         });
-
-
-
-
-
-
 </script>
 {% endblock %}
