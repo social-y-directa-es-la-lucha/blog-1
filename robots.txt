@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://social-y-directa-es-la-lucha.github.io/blog-1//sitemap.xml
